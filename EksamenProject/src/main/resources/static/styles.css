@@ -1,3 +1,76 @@
-html {
+html{
     font: 14px Prototype, serif;
+    background-color: #555;
+
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+
+.filler{
+    max-height: 300px;
+}
+
+.fixed-position{
+    position: fixed;
+    background-color: #f00;
+    margin: 5px;
+}
+
+.links{
+    background-color: #007;
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.header{
+    height: 96px;
+}
+
+#header{
+    width: 100%;
+    background-color: #00f;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header_menu{
+    width: 70%;
+    background-color: #FF0000;
+    margin: auto;
+    float: left;
+    text-align: center;
+}
+
+#header_left{
+    float: left;
+    width: 15%;
+}
+
+#header_right{
+    width: 15%;
+    float: right;
+}
+
+#header img{
+    margin: 5px;
+}
+
+/** Webkits **/
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
