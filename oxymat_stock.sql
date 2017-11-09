@@ -1,0 +1,1 @@
+INSERT INTO oxymat.stock (models_id, models_name, in_stock) VALUES (1, 'n40', 0);
