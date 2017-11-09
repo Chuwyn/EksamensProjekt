@@ -1,6 +1,6 @@
 html{
     font: 14px Prototype, serif;
-    background-color: #555;
+    background-color: #fff;
 
     overflow: scroll;
     overflow-x: hidden;
@@ -18,16 +18,29 @@ body{
 
 .fixed-position{
     position: fixed;
-    background-color: #f00;
     margin: 0px;
 }
 
 /** Div Class ends **/
 /** Div ID start **/
 
-#header{width: 100%;}
+#header{
+    width: 100%;
+}
+#header_shadow{
+    position: absolute;
+    top:100px;
+    width: 100%;
+    transform: scale(1, 0.5);
+    background-image: url("https://imgur.com/l65tDXi.png");
+    background-repeat: repeat-x;
+}
+#header_shadow_size{
+    width: 100%;
+    height: 10px;
+}
 
-#header_left{background-color: #fff; float: left; height: 100px;
+#header_left{ float: left; height: 100px;
     width: 15%;}
 
 #header_left img{
@@ -36,14 +49,12 @@ body{
     height: 80px;
 }
 #header_mid{
-    background-color: #fff;
     float: left;
     height: 100px;
     width: 67.5%;
 }
 
 #header_right {
-    background-color: #fff ;
     float: right;
     height: 100px;
     width: 17.5%  ;
@@ -51,8 +62,8 @@ body{
 
 #filler{height: 100px;}
 
-#body{background-color: #333;  height: 500px;
-    width: 100%;}
+#body{background-color: #fff;  height: 500px;
+    width: 100%;border: solid 1px red}
 
 #footer{background-color: #fff;height: 100px;
     width: 100%;}
@@ -76,6 +87,7 @@ body{
 #header_menu{
 background-color: #ccc;
 }
+
 
 li {
     list-style: none;
