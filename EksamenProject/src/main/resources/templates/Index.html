@@ -3,87 +3,58 @@
 <head>
 
     <title>HOME</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'/>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
     <link rel="stylesheet" type="text/css"
           href="../static/styles.css"
           th:href="@{styles.css}"/>
-</head>
-
-<div id="header" class="fixed-position">
-
-    <div id="header_left" class="header">
-        <a href="#header" class="logo, links">
-            <!-- Image from their own website -->
-            <img src="https://www.oxymat.com/wp-content/themes/oxymat/skin/default/images/logo.png" />
-        </a>
-    </div>
-
-    <div id="header_menu" class="header">
-        <a href="/orders" class="links"><h3>Orders</h3></a>
-        <a href="/products" class="links"><h3>Products</h3></a>
-        <a href="/stock" class="links"><h3>Stock</h3></a>
-    </div>
-
-    <div id="header_right" class="header">
-        <p> contact: </p>
-    </div>
-
-</div>
-
-<div class="filler">
-    <img src="https://imgur.com/TEPC9Nb.png"/>
-</div>
+</head> <!-- head ends -->
 
 <body>
 
-    <h1>(:</h1>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
-    <p>Text text text</p>
+<!-- div header, class fixed position: Makes the box for header and locks it in a fixed position on top, making it stay while rest of site scrolls -->
+<div id="header" class="fixed-position">
 
+    <div id="header_left" >
+        <img src="https://www.oxymat.com/wp-content/themes/oxymat/skin/default/images/logo.png"/>
+    </div> <!-- div header left ends -->
 
-</body>
-</html>
+    <div id="header_mid" >
+        <h6>HOME</h6>
+
+        <h6>ORDERS</h6>
+
+        <h6>PRODUCTS</h6>
+
+        <h6>STOCK?</h6>
+
+        <h6>USERS</h6>
+    </div> <!-- div header mid ends -->
+
+    <div id="header_right" >
+        <div id="header_menu">
+            <ul id="header_sprites">
+                <li> +45 4879 7811 </li>
+                <li> Language </li>
+                <li> Distributors area </li>
+                <li> Search </li>
+            </ul>
+        </div>
+    </div> <!-- div header right ends -->
+
+</div> <!-- div header ends -->
+
+<div id="filler" ></div> <!-- filler-box, makes page start bellow the header (which don't have any collision)-->
+
+<!-- Div body, box for all content between header and footer -->
+<div id="body" >
+
+</div> <!-- div body ends here -->
+
+<div id="footer" >
+
+</div> <!-- div footer ends here -->
+
+</body> <!-- body ends here -->
+
+</html> <!-- html ends -->

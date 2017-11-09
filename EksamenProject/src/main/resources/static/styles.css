@@ -7,64 +7,103 @@ html{
 }
 
 body{
+    display: inline-block;
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0px;
     padding: 0px;
-    display: inline-block;
 }
 
-.filler{
-    max-height: 300px;
-}
+/** Div Class start**/
 
 .fixed-position{
     position: fixed;
     background-color: #f00;
-    margin: 5px;
-}
-
-.links{
-    background-color: #007;
-    float: left;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-.header{
-    height: 96px;
-}
-
-#header{
-    width: 100%;
-    background-color: #00f;
     margin: 0px;
-    padding: 0px;
+}
+
+/** Div Class ends **/
+/** Div ID start **/
+
+#header{width: 100%;}
+
+#header_left{background-color: #fff; float: left; height: 100px;
+    width: 15%;}
+
+#header_left img{
+    margin-left: 5%;
+    margin-top: 5%;
+    height: 80px;
+}
+#header_mid{
+    background-color: #fff;
+    float: left;
+    height: 100px;
+    width: 67.5%;
+}
+
+#header_right {
+    background-color: #fff ;
+    float: right;
+    height: 100px;
+    width: 17.5%  ;
+}
+
+#filler{height: 100px;}
+
+#body{background-color: #333;  height: 500px;
+    width: 100%;}
+
+#footer{background-color: #fff;height: 100px;
+    width: 100%;}
+
+/** Div ID ends**/
+
+/** Misc start **/
+
+#header_sprites{
+    background-image: url("https://www.oxymat.com/wp-content/themes/oxymat/skin/default/images/header-sprite.png");
+    background-repeat: no-repeat;
+    background-size: 20px 83.5px;
+    background-position: 13px 4px ;
+    height: 100px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 #header_menu{
-    width: 70%;
-    background-color: #FF0000;
-    margin: auto;
+background-color: #ccc;
+}
+
+li {
+    list-style: none;
+    color: #bbb;
+    word-spacing: 2px;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: lato;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+#header_mid h6{
     float: left;
-    text-align: center;
+    margin-top: 75%;
+    margin-right: 25px;
+    margin-left: 25px;
+    color: #111;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Abel;
+    font-weight: normal;
 }
 
-#header_left{
-    float: left;
-    width: 15%;
-}
+/** Misc ends **/
 
-#header_right{
-    width: 15%;
-    float: right;
-}
-
-#header img{
-    margin: 5px;
-}
-
-/** Webkits **/
+/** Webkits starts **/
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
@@ -74,3 +113,5 @@ body{
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
+/** Webkits ends **/
