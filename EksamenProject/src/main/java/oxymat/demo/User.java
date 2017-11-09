@@ -2,6 +2,8 @@ package oxymat.demo;
 
 
 public class User {
+
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -10,7 +12,8 @@ public class User {
     private String userName;
     private String password;
 
-    public User(String firstName, String lastName, String email, String phoneNumber, String userName, String password){
+    public User(int id, String firstName, String lastName, String email, String phoneNumber, String userName, String password){
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -20,6 +23,10 @@ public class User {
     }
 
     // Getters n Setters
+    public int getId(){
+        return id;
+    }
+
     public String getFirstName(){
         return firstName;
     }
