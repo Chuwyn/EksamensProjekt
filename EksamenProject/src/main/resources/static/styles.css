@@ -1,5 +1,5 @@
 html{
-    font: 14px Prototype, serif;
+    font: 14px Lato;
     background-color: #fff;
 
     overflow: scroll;
@@ -26,13 +26,14 @@ body{
 
 #header{
     width: 100%;
+    background-color: #fff;
 }
 #header_shadow{
     position: absolute;
-    top:100px;
+    top: 93px;
     width: 100%;
     transform: scale(1, 0.5);
-    background-image: url("https://imgur.com/l65tDXi.png");
+    background: linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.25)), url("https://imgur.com/l65tDXi.png");
     background-repeat: repeat-x;
 }
 #header_shadow_size{
@@ -60,13 +61,35 @@ body{
     width: 17.5%  ;
 }
 
-#filler{height: 100px;}
+#filler{height: 110px;}
 
-#body{background-color: #fff;  height: 500px;
-    width: 100%;border: solid 1px red}
+#body{
+    background-color: #fff;
+    height: auto;
+    width: 100%;
+    border: solid 1px red;
+    color: #000;
+}
 
-#footer{background-color: #fff;height: 100px;
-    width: 100%;}
+#footer{
+    background-color: #fff;
+    height: 200px;
+    width: 100%;
+}
+
+#footer_top{
+    background-image: url("https://i.imgur.com/20kjOWo.png");
+    height: 40px;
+    width: 100%;
+    background-size: cover;
+}
+
+#footer_bot{
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    background-color: #A8C1DC;
+}
 
 /** Div ID ends**/
 
@@ -84,8 +107,14 @@ body{
     margin-bottom: 4px;
 }
 
-#header_menu{
-background-color: #ccc;
+#header_menu a{
+    list-style: none;
+    color: #bbb;
+    word-spacing: 2px;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: lato;
+    font-weight: normal;
 }
 
 
@@ -100,18 +129,65 @@ li {
     margin-top: 5px;
 }
 
-#header_mid h6{
+#header_mid a{
     color: #555;
     float: left;
-    margin-top: 67px;
-    margin-right: 25px;
-    margin-left: 25px;
+    margin-top: 43px;
+    padding-left: 5%;
+    padding-right: 5%;
     letter-spacing: 2px;
     font-size: 16px;
     text-decoration: none;
     font-family: Lato;
     font-weight: normal;
 }
+
+.header_links {
+    width: auto;
+    height: auto;
+    padding-bottom: 11px;
+}
+
+.header_links:hover{
+    color: #46865a;
+    border-bottom: solid #46865a 4px;
+}
+
+#header_mid a:hover{
+    color: #46865a;
+}
+
+#footer{
+        font: 14px Abel;
+}
+
+#foot1, #foot3{
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    display:inline-block;
+    margin-left: 7%;
+    font: 14px Abel;
+}
+#foot2{
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    display:inline-block;
+    margin-left: 7%;
+    font: 14px Abel;
+}
+
+#foot4{
+    vertical-align: top;
+    width: auto;
+    display:inline-block;
+    height: auto;
+    margin-left: 7%;
+    margin-right: 7%;
+    font: 14px Abel;
+}
+
 
 /** Misc ends **/
 
