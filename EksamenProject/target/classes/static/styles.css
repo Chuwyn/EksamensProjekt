@@ -58,7 +58,7 @@ body{
 #header_right {
     float: right;
     height: 100px;
-    width: 17.5%  ;
+    width: 17.5%;
 }
 
 #filler{height: 110px;}
@@ -66,9 +66,10 @@ body{
 #body{
     background-color: #fff;
     height: auto;
-    width: 100%;
-    border: solid 1px red;
+    width: 83%;
     color: #000;
+    margin-left: 8.5%;
+    margin-right: 8.5%;
 }
 
 #footer{
@@ -89,6 +90,7 @@ body{
     height: auto;
     padding: 25px;
     background-color: #A8C1DC;
+    color: #fff;
 }
 
 /** Div ID ends**/
@@ -99,7 +101,7 @@ body{
     background-image: url("https://www.oxymat.com/wp-content/themes/oxymat/skin/default/images/header-sprite.png");
     background-repeat: no-repeat;
     background-size: 20px 83.5px;
-    background-position: 13px 4px ;
+    background-position: 13px 4px;
     height: 100px;
     float: left;
     margin-right: 5px;
@@ -158,7 +160,8 @@ li {
 }
 
 #footer{
-        font: 14px Abel;
+    width: auto;
+    height: auto;
 }
 
 #foot1, #foot3{
@@ -167,7 +170,6 @@ li {
     height: auto;
     display:inline-block;
     margin-left: 7%;
-    font: 14px Abel;
 }
 #foot2{
     vertical-align: top;
@@ -175,17 +177,25 @@ li {
     height: auto;
     display:inline-block;
     margin-left: 7%;
-    font: 14px Abel;
 }
 
 #foot4{
     vertical-align: top;
     width: auto;
-    display:inline-block;
     height: auto;
+    display:inline-block;
     margin-left: 7%;
     margin-right: 7%;
+}
+
+#foot1 a, #foot2 a, #foot3 a, #foot4 a{
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    text-decoration: none;
+    word-spacing: 1px;
     font: 14px Abel;
+    line-height: 20%;
 }
 
 
