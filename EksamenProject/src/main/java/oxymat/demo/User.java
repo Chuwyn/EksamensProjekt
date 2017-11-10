@@ -4,63 +4,82 @@ package oxymat.demo;
 public class User {
 
     private int id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
+    private String firstname;
+    private String lastname;
+    private String mail;
+    private String phone;
 
-    private String userName;
+    private String username;
     private String password;
 
-    public User(int id, String firstName, String lastName, String email, String phoneNumber, String userName, String password){
+    public User(){
+
+    }
+
+    public User(int id, String firstname, String lastname, String mail, String phone, String username, String password){
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this. userName = userName;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.mail = mail;
+        this.phone = phone;
+        this. username = username;
         this.password = password;
     }
 
-    // Getters n Setters
+    // Getters
     public int getId(){
         return id;
     }
 
-    public String getFirstName(){
-        return firstName;
+    public String getFirstname(){
+        return firstname;
     }
 
-    public String getLastName(){
-        return lastName;
+    public void setFirstname(String value){
+        this.firstname = value;
     }
 
-    public void setEmail(String value){
-        email = value;
+    public String getLastname(){
+        return lastname;
     }
 
-    public String getEmail(){
-        return email;
+    public void setLastname(String value){
+        this.lastname = value;
     }
 
-    public void setPhoneNumber(String value){
-        phoneNumber = value;
+
+    public String getMail(){
+        return mail;
     }
 
-    public String getPhoneNumber(){
-        return phoneNumber;
+    public void setMail(String value){
+        this.mail = value;
     }
 
-    public String getUserName(){
-        return userName;
+
+    public String getPhone(){
+        return phone;
+    }
+
+    public void setPhone(String value){
+        this.phone = value;
+    }
+
+    public String getUsername(){
+        return username;
+    }
+
+    public void setUsername(String value){
+        this.username = value;
     }
 
     public String getPassword(){
         return password;
     }
 
-    public boolean checkPass(String pass){
-        return password.equals(pass);
+    public void setPassword(String value){
+        this.password = value;
     }
+
 
 }

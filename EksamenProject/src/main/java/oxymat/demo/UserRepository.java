@@ -15,7 +15,7 @@ public class UserRepository implements ICrud<User> {
 
     @Override
     public void create(User user) {
-        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone) VALUES ('"+ user.getFirstName() + "','" + user.getLastName() + "','" + user.getUserName() + "','" +user.getPassword()+"','"+user.getEmail()+"','"+user.getPhoneNumber() +"')");
+        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"')");
     }
 
     @Override
@@ -42,12 +42,12 @@ public class UserRepository implements ICrud<User> {
     @Override
     public void update(User user) {
         jdbc.update("UPDATE users SET " +
-                "firstname = '" + user.getFirstName()   + "'," +
-                "lastname  = '" + user.getLastName()    + "'," +
-                "username  = '" + user.getUserName()    + "'," +
+                "firstname = '" + user.getFirstname()   + "'," +
+                "lastname  = '" + user.getLastname()    + "'," +
+                "username  = '" + user.getUsername()    + "'," +
                 "password  = '" + user.getPassword()    + "'," +
-                "mail      = '" + user.getEmail()       + "'," +
-                "phone     = '" + user.getPhoneNumber() + "' WHERE id = '" + user.getId() +"'");
+                "mail      = '" + user.getMail()       + "'," +
+                "phone     = '" + user.getPhone() + "' WHERE id = '" + user.getId() +"'");
     }
 
     @Override
