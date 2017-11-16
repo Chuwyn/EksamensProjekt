@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
+    <head>
 
-    <title>OXYMAT - Login</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'/>
-    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
-    <link rel="stylesheet" type="text/css"
-          href="../static/styles.css"
-          th:href="@{styles.css}"/>
-</head> <!-- head ends -->
+        <title>OXYMAT - Login</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'/>
+        <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
+        <link rel="stylesheet" type="text/css"
+              href="../static/styles.css"
+              th:href="@{styles.css}"/>
+    </head> <!-- head ends -->
 
 <body>
 
@@ -51,9 +50,23 @@
 
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
-    <p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
-    <p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
-    <p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
+    <table>
+        <form action="/create"  th:action="@{/create}" method="post" th:object="${user}">
+
+            <tr>
+                <td><input type="text" th:field="*{username}" placeholder="User Name"/></td>
+                <td><input type="password" th:field="*{password}" placeholder="Password"/></td>
+                <td><input type="text" th:field="*{mail}" placeholder="Mail"/></td>
+                <td><input type="text" th:field="*{firstname}" placeholder="First Name"/></td>
+                <td><input type="text" th:field="*{lastname}" placeholder="last Name"/></td>
+                <td><input type="text" th:field="*{phone}" placeholder="Phone"/></td>
+
+                <td><input type="submit" value="Send" class="btn"/></td>
+            </tr>
+
+        </form>
+
+    </table>
 </div> <!-- div body ends here -->
 
 <div id="footer" >
@@ -150,5 +163,4 @@
         </div> <!-- div footer ends here -->
 
     </body> <!-- body ends here -->
->>>>>>> 987ce586a14610d3fa4516a75d876369916e8087
 </html> <!-- html ends -->
