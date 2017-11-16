@@ -28,8 +28,6 @@ public class UController {
     }
 
 
-<<<<<<< HEAD
-=======
 
     @ModelAttribute("login")
     public Login addEmptyLogin(){
@@ -47,7 +45,6 @@ public class UController {
     }
 
 
->>>>>>> 8251d9e5b55b48af8bedf8ab1a379f5e9d3f7eb5
     @GetMapping("/login")
     public String login(Model model){
         model.addAttribute("login", new Login());
