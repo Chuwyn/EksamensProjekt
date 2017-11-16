@@ -50,9 +50,19 @@
 
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
+<<<<<<< HEAD
     <div th:each="product : ${products}">
         <h3 th:text="product.title">Error?</h3>
         <p th:text="product.price">$$£</p>
+=======
+
+    <div th:each="product : ${products}" th:remove="tag">
+        <tr>
+            <td th:text="${product.title}">my product</td>
+            <td th:text="${product.price}">my price</td>
+        </tr>
+
+>>>>>>> 75db531fc88c1cab7b90d922f9252ac27ea6b630
     </div>
 </div> <!-- div body ends here -->
 

@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import oxymat.demo.Login;
-import oxymat.demo.User;
-import oxymat.demo.UserRepository;
+import oxymat.demo.*;
+
+import java.util.ArrayList;
 
 @Controller
 public class UController {
@@ -16,6 +16,9 @@ public class UController {
 
     @Autowired
     private UserRepository userRepository = new UserRepository();
+
+    @Autowired
+    private ProductRepository products = new ProductRepository();
 
     private User activeUser;
 
@@ -73,7 +76,8 @@ public class UController {
     @GetMapping("/products")
     public String products(Model model) {
 
-        model.addAttribute("us", model);
+        model.addAttribute("products", products.readAll());
+
         return "products";
     }
 
