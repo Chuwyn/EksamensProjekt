@@ -13,6 +13,8 @@ public class UserRepository implements ICrud<User> {
     @Autowired
     private JdbcTemplate jdbc;
 
+
+
     @Override
     public void create(User user) {
         jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"')");
@@ -53,5 +55,13 @@ public class UserRepository implements ICrud<User> {
     @Override
     public void delete(int id) {
         jdbc.update("DELETE FROM users WHERE id ='" + id +"'");
+    }
+
+    public User findUserByUsername(String username, String password){
+        SqlRowSet user = jdbc.queryForRowSet("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
+        while(user.next()){
+            return new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"));
+        }
+        return null;
     }
 }

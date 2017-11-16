@@ -52,29 +52,11 @@
 <div id="body" >
     <div id="index_content">
 
-        <form action=""> <!-- remove once thymeleaf implemented -->
+
         <table>
-                <tr>
-                    <!--
-                    <td><p>Username:<input type="text" name="username"/></p></td>
-                    <td><p>Password:<input type="text" name="password"/></p></td>
-                    -->
-                    <td>
-                        <p> Username: <input type="text" name="username" placeholder="username"/></p>
-                        <p> Password: <input type="password" name="password" placeholder="password"/></p>
-                    </td>
-
-                    <td>
-                        <input type="submit" value=">" class="btn"/>
-                    </td>
-
-                </tr>
 
 
-
-            <!-- Need to be implemented correctly. "user = @ModelAttribute"
-
-            <form action="/login"  th:action="@{/login}" method="post" th:object="${user}">
+            <form action="/login"  th:action="@{/login}" method="post" th:object="${login}">
 
                 <tr>
                     <td><p>Username:</p><input type="text" th:field="*{username}" /></td>
@@ -85,10 +67,10 @@
 
             </form>
 
-             -->
+
 
         </table>
-        </form> <!-- remove once thymeleaf implemented -->
+
     </div>
     <div id="bot_container">
         <div class="bot_body">
