@@ -40,11 +40,13 @@ public class ProductRepository implements ICrud<Product> {
 
     @Override
     public void update(Product product) {
-        
+        jdbc.update("UPDATE models SET" +
+                "name = '" + product.getTitle() +"'," +
+                "price = '" + product.getPrice() + "' WHERE id='" + product.getId() + "'");
     }
 
     @Override
     public void delete(int id) {
-
+        jdbc.update("DELETE FROM models WHERE id ='" + id +"'");
     }
 }
