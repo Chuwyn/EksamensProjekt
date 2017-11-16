@@ -23,9 +23,6 @@ public class UController {
     }
 
 
-
-
-
     @GetMapping("/login")
     public String login(Model model){
         model.addAttribute("user", new User());
@@ -37,5 +34,36 @@ public class UController {
         userRepository.create(user);
         return "redirect:/";
     }
+
+
+    /** start here **/
+    @GetMapping("/products")
+    public String products(Model model) {
+
+        model.addAttribute("us", model);
+        return "products";
+    }
+
+    @GetMapping("/orders")
+    public String orders(Model model) {
+
+        model.addAttribute("us", model);
+        return "orders";
+    }
+
+    @GetMapping("/users")
+    public String users(Model model) {
+
+        model.addAttribute("us", model);
+        return "users";
+    }
+
+    @GetMapping("/stock")
+    public String stock(Model model) {
+
+        model.addAttribute("us", model);
+        return "stock";
+    }
+    /** end here **/
 
 }
