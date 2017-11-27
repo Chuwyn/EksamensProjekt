@@ -50,6 +50,7 @@
 
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
+<<<<<<< HEAD
 
     <div th:each="product : ${products}">
         <div class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
@@ -66,6 +67,17 @@
                 <td th:text="${product.getDisplay()}">number</td>
             </tr>
         </div>
+=======
+
+
+    <div th:each="product : ${products}">
+        <tr>
+            <td th:text="${product.title}">my product</td>
+            <td th:text="${product.price}">my price</td>
+        </tr>
+
+
+>>>>>>> 9c9ec913d5aa9372c4af3fc1fd38a981063ba184
     </div>
 
 </div> <!-- div body ends here -->
