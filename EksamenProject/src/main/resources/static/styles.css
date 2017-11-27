@@ -142,6 +142,17 @@ table tr h6{
     max-height: 500px;
 }
 
+
+#product_content{
+    float:left;
+    width: 80%;
+    margin: auto;
+    height: auto;
+    min-height: 300px;
+    max-height: 2000px;
+    background-color: #f00;
+}
+
 /** Div ID ends**/
 
 /** Misc start **/
