@@ -6,9 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import oxymat.demo.*;
-
-import java.util.ArrayList;
+import oxymat.demo.Login;
+import oxymat.demo.ProductRepository;
+import oxymat.demo.User;
+import oxymat.demo.UserRepository;
 
 @Controller
 public class UController {

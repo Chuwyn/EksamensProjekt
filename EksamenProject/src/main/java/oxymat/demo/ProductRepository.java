@@ -19,11 +19,14 @@ public class ProductRepository implements ICrud<Product> {
         jdbc.update("INSERT into models (name, price) VALUES ('" + product.getTitle() + "','" + product.getPrice() + "')");
     }
 
+
+
     @Override
     public Product read(int id) {
         SqlRowSet product = jdbc.queryForRowSet("SELECT * FROM models WHERE id = '" + id + "'");
+        Product prod = new Product();
         while(product.next()){
-            return new Product(product.getInt("id"), product.getString("name"), product.getString("price"));
+            return new Product(product.getInt("id"), product.getString("name"), product.getString("price"), prod.getDisplay());
         }
         return null;
     }
@@ -32,8 +35,13 @@ public class ProductRepository implements ICrud<Product> {
     public ArrayList<Product> readAll() {
         ArrayList<Product> productList = new ArrayList<Product>();
         SqlRowSet product = jdbc.queryForRowSet("SELECT * FROM models");
+        Product prod = new Product();
         while(product.next()){
-            productList.add(new Product(product.getInt("id"), product.getString("name"), product.getString("price")));
+            productList.add(new Product(product.getInt("id"), product.getString("name"), product.getString("price"), prod.getDisplay()));
+            if(prod.getDisplay()==3) {prod.setDisplay(0);}
+            int newDisplay = prod.getDisplay()+1;
+            prod.setDisplay(newDisplay);
+            System.out.println("display: "+prod.getDisplay());
         }
 
 
