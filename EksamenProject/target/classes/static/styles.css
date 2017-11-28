@@ -23,23 +23,27 @@ table tr h6{
 }
 
 .products{
-    height: 250px;
+    height: 240px;
     width: 33%;
     background-color: #f00;
-    font: 14px Lato;
     display:table-cell;
     float: left;
     margin-right: 0;
+    padding-top: 10px;
+    text-align: center;
+    font: 14px Lato;
 }
 
 .products2{
-    height: 250px;
+    height: 240px;
     width: 33%;
     background-color: #ff0;
-    font: 14px Lato;
     display:table-cell;
     float: right;
     margin-left: 0;
+    padding-top: 10px;
+    text-align: center;
+    font: 14px Lato;
 }
 
 .btn-round{
@@ -152,6 +156,7 @@ table tr h6{
     max-height: 2000px;
     background-color: #f00;
 }
+
 
 /** Div ID ends**/
 

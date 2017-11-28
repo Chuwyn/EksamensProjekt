@@ -55,16 +55,22 @@
             <div th:each="product : ${products}">
                 <div class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
                     <tr>
-                        <td th:text="${product.title}">my product</td>
-                        <td th:text="${product.price}">my price</td>
-                        <td th:text="${product.getDisplay()}">number</td>
+                        <td>Model: </td><td th:text="${product.title}">my product</td>
+                        <br/>
+                        <td> <img src="https://imgur.com/EKFt1fw.png" width="50%" height="50%"/></td>
+                        <br/>
+                        <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
+                        <!-- <td th:text="${product.getDisplay()}">number</td> -->
                     </tr>
                 </div>
                 <div class="products2" th:if="${product.getDisplay()} &gt; 2 and ${product.getDisplay()} &lt; 4">
                     <tr>
-                        <td th:text="${product.title}">my product</td>
-                        <td th:text="${product.price}">my price</td>
-                        <td th:text="${product.getDisplay()}">number</td>
+                        <td>Model: </td><td th:text="${product.title}">my product</td>
+                        <br/>
+                        <td> <img src="https://imgur.com/EKFt1fw.png" width="50%" height="50%"/></td>
+                        <br/>
+                        <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
+                        <!-- <td th:text="${product.getDisplay()}">number</td> -->
                     </tr>
                 </div>
             </div>
