@@ -10,16 +10,18 @@ import oxymat.demo.Login;
 import oxymat.demo.ProductRepository;
 import oxymat.demo.User;
 import oxymat.demo.UserRepository;
+import oxymat.demo.DisplayRepository;
 
 @Controller
 public class UController {
 
 
     @Autowired
-    private UserRepository userRepository = new UserRepository();
+    private UserRepository users = new UserRepository();
 
     @Autowired
     private ProductRepository products = new ProductRepository();
+    private DisplayRepository display = new DisplayRepository();
 
     private User activeUser;
 
@@ -28,22 +30,23 @@ public class UController {
     public String index(Model model) {
 
         model.addAttribute("us", model);
+
         return "index";
     }
 
 
-
     @ModelAttribute("login")
     public Login addEmptyLogin(){
+
         return new Login();
     }
+
 
     @PostMapping("/login")
     public String login(@ModelAttribute("login") Login login, Model model){
 
-        activeUser = userRepository.findUserByUsername(login.getUsername(), login.getPassword());
+        activeUser = users.findUserByUsername(login.getUsername(), login.getPassword());
         System.out.println("Welcome " + activeUser.getFirstname());
-
         
         return "orders";
     }
@@ -51,24 +54,27 @@ public class UController {
 
     @GetMapping("/login")
     public String login(Model model){
+
         model.addAttribute("login", new Login());
+
         return "index";
     }
 
 
-
-
-
-
     @GetMapping("/create")
     public String create(Model model){
+
         model.addAttribute("user", new User());
+
         return "create";
     }
 
+
     @PostMapping("/create")
     public String create(@ModelAttribute User user){
-        userRepository.create(user);
+
+        users.create(user);
+
         return "redirect:/";
     }
 
@@ -82,26 +88,34 @@ public class UController {
         return "products";
     }
 
+
     @GetMapping("/orders")
     public String orders(Model model) {
 
         model.addAttribute("us", model);
+
         return "orders";
     }
+
 
     @GetMapping("/users")
     public String users(Model model) {
 
-        model.addAttribute("us", model);
+        model.addAttribute("us", users.readAll());
+        model.addAttribute("ds", display.readAll());
+
         return "users";
     }
+
 
     @GetMapping("/stock")
     public String stock(Model model) {
 
         model.addAttribute("us", model);
+
         return "stock";
     }
+
     /** end here **/
 
 }
