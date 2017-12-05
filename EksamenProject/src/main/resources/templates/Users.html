@@ -53,8 +53,23 @@
     <div id="user_content">
 
             <div th:each="user : ${users}">
+                <div id="users_left" class="users" th:if="${user.getDisplay()} &gt; 0 and ${user.getDisplay()} &lt; 3">
+                    <img src="https://imgur.com/EKFt1fw.png" />
+                    <tr>
+                        <td>Name: </td>
+                        <td th:text="${user.getFirstname()}">firstname</td>
+                        <td th:text="${user.getLastname()}">lastname</td>
+                        <br/>
+                        <td>e-mail: </td>
+                        <td th:text="${user.getMail()}">e-mail</td><td> test?</td>
+                        <br/>
+                        <td>phone: </td>
+                        <td th:text="${user.getPhone()}">phone</td>
+                    </tr>
+                </div>
 
-                    <img src="https://imgur.com/EKFt1fw.png" class="user_img"/>
+                <div class="users" th:if="${user.getDisplay()} &gt; 2 and ${user.getDisplay()} &lt; 4">
+                    <img src="https://imgur.com/EKFt1fw.png" />
                     <tr>
                         <td>Name: </td>
                         <td th:text="${user.getFirstname()}">firstname</td>
@@ -67,6 +82,7 @@
                         <td th:text="${user.getPhone()}">phone</td>
                     </tr>
                 </div>
+            </div>
 
 
     </div>

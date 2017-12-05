@@ -8,7 +8,7 @@ public class User {
     private String lastname;
     private String mail;
     private String phone;
-
+    private int display = 1;
     private String username;
     private String password;
 
@@ -16,7 +16,7 @@ public class User {
 
     }
 
-    public User(int id, String firstname, String lastname, String mail, String phone, String username, String password){
+    public User(int id, String firstname, String lastname, String mail, String phone, String username, String password, int display){
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -24,6 +24,7 @@ public class User {
         this.phone = phone;
         this. username = username;
         this.password = password;
+        this.display = display;
     }
 
     // Getters
@@ -81,5 +82,10 @@ public class User {
         this.password = value;
     }
 
+    public int getDisplay(){ return display; }
+
+    public void setDisplay(int value){
+        this.display = value;
+    }
 
 }

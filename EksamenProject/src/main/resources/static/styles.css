@@ -22,55 +22,59 @@ table tr h6{
     margin-bottom: 40%;
 }
 
+.products img{
+    width: 128px;
+    height: 128px;
+    margin-right: 7px;
+}
+
+#products_left{
+    float: left;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
+}
+
 .products{
      height: 240px;
      width: 33%;
      background-color: #eee;
      display:table-cell;
-     float: left;
-     margin-right: 0.5%;
-     margin-bottom: 0.5%;
+     float: right;
      padding-top: 10px;
      text-align: center;
      font: 14px Lato;
      box-shadow: 0 0 0 3px black inset;
  }
 
-.products2{
-    height: 240px;
-    width: 33%;
-    background-color: #eee;
-    display:table-cell;
-    float: right;
-    margin-left: 0;
-    margin-bottom: 0.5%;
-    padding-top: 10px;
-    text-align: center;
-    font: 14px Lato;
-    box-shadow: 0 0 0 3px black inset;
-}
-
 .products:hover, .products2:hover{
     box-shadow: 0px 0px 0px 3px black inset;
     background-color: #ddd;
 }
-.user_img{
+.users img{
     width: 56px;
     height: 56px;
     float: left;
     margin-right: 7px;
 }
 
+#users_left{
+    float: left;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
+}
+
 .users{
-    height: 56px;
-    width: 300px;
-    margin-right: 25px;
+    height: 70px;
+    width: 33%;
+    background-color: #eee;
     display:table-cell;
+    float: right;
     padding-top: 10px;
     text-align: left;
     font: 14px Lato;
-    border-bottom: solid black 1px;
+    box-shadow: 0 0 0 3px black inset;
 }
+
 
 .btn-round{
     color: #fff;

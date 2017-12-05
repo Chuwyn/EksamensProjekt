@@ -10,7 +10,6 @@ import oxymat.demo.Login;
 import oxymat.demo.ProductRepository;
 import oxymat.demo.User;
 import oxymat.demo.UserRepository;
-import oxymat.demo.DisplayRepository;
 
 @Controller
 public class UController {
@@ -21,7 +20,6 @@ public class UController {
 
     @Autowired
     private ProductRepository products = new ProductRepository();
-    private DisplayRepository display = new DisplayRepository();
 
     private User activeUser;
 
@@ -101,8 +99,7 @@ public class UController {
     @GetMapping("/users")
     public String users(Model model) {
 
-        model.addAttribute("us", users.readAll());
-        model.addAttribute("ds", display.readAll());
+        model.addAttribute("users", users.readAll());
 
         return "users";
     }
