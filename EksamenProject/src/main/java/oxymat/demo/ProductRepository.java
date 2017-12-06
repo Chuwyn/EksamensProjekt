@@ -37,6 +37,7 @@ public class ProductRepository implements ICrud<Product> {
         SqlRowSet product = jdbc.queryForRowSet("SELECT * FROM models");
         Product prod = new Product();
         int count = 0;
+        System.out.println(" ");
         System.out.println("Display product: x  ###  ID NAME PRICE");
         System.out.println(" ");
         while(product.next()){
