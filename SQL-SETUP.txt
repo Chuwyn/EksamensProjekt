@@ -1,0 +1,83 @@
+/* create scheme oxydb */
+CREATE SCHEMA oxydb;
+
+/* Create Customers */
+
+CREATE TABLE `customers` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `cvr` int(11) NOT NULL,
+  `Adresse` text NOT NULL,
+  `phone` text,
+  `mail` text,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `Customers_ID_uindex` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* Create Models */
+
+CREATE TABLE `models` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `price` text NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `models_id_uindex` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* Create Orders */
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` int(11) NOT NULL,
+  `customer` int(11) NOT NULL,
+  `model` int(11) NOT NULL,
+  `placement_date` date NOT NULL,
+  `delivery_date` date DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `orders_id_uindex` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* Create Stock */
+
+CREATE TABLE `stock` (
+  `models_id` int(11) NOT NULL,
+  `models_name` text NOT NULL,
+  `in_stock` int(11) DEFAULT '0',
+  UNIQUE KEY `stock_models_id_uindex` (`models_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* Create Users */
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` text NOT NULL,
+  `lastname` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `mail` text NOT NULL,
+  `phone` text NOT NULL,
+  `display` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_id_uindex` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* Create content into users and models */
+
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Alpha","Test","A","123","Alpha@Oxymat.com","+45 12 34 56 78","1");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Beta","Beta","B","123","Betaa@Oxymat.com","+45 12 34 56 78","2");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Gamma","Tester","C","1234","Gamma@Oxymat.com","+45 12 34 56 78","3");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Root","Root","root","root","Root@Oxymat.com","+45 00 00 00 00","1");
+
+INSERT INTO oxydb.models (name,price) VALUES ("H10","120");
+INSERT INTO oxydb.models (name,price) VALUES ("H20","150");
+INSERT INTO oxydb.models (name,price) VALUES ("H30","220");
+INSERT INTO oxydb.models (name,price) VALUES ("H90","1900");
+INSERT INTO oxydb.models (name,price) VALUES ("N10","130");
+INSERT INTO oxydb.models (name,price) VALUES ("N250","2500");
+INSERT INTO oxydb.models (name,price) VALUES ("O20","900");
+
