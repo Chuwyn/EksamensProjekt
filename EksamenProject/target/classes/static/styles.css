@@ -22,6 +22,21 @@ table tr h6{
     margin-bottom: 40%;
 }
 
+.orders{
+    height: 240px;
+    width: 33%;
+    background-color: #eee;
+    display:table-cell;
+    float: left;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
+    padding-top: 10px;
+    text-align: center;
+    font: 14px Lato;
+    box-shadow: 0 0 0 3px black inset;
+}
+
+
 .products{
     height: 240px;
     width: 33%;

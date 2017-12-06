@@ -1,8 +1,10 @@
 package oxymat.demo;
 
+
 import java.sql.Date;
 
-public class Order {
+
+public class Order{
     private int id;
     private int userId;
     private int customerId;
@@ -13,6 +15,16 @@ public class Order {
 
     public Order(){
 
+    }
+
+    public Order(int id, int userId, int customerId, int modelId, Date placementDate, Date deliveryDate, int status){
+        this.id = id;
+        this.userId = userId;
+        this.customerId = customerId;
+        this.modelId = modelId;
+        this.placementDate = placementDate;
+        this.deliveryDate = deliveryDate;
+        this.status = status;
     }
 
     public int getId(){

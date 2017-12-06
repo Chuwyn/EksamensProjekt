@@ -50,9 +50,26 @@
 
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
-    <p>filler</p><p>Orders</p><p>filler</p><p>Orders</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
-    <p>filler</p><p>Orders</p><p>filler</p><p>Orders</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
-    <p>filler</p><p>Orders</p><p>filler</p><p>Orders</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p><p>filler</p>
+    <div id="order_search">
+        <form th:action="@{/search}" method="post" th:object="${order}">
+            <input type="text" th:field="*{id}" placeholder="Order ID"/>
+        </form>
+    </div>
+    <div id="order_results">
+        <div th:each="order : ${orders}">
+            <div class="orders">
+                <tr>
+                        <td>Order Number:</td><td th:text="${order.id}">my order</td>
+                        <td>User Name:</td><td th:text="${order.userId}">my user</td>
+                        <td>Customer Name:</td><td th:text="${order.customerId}">my customer</td>
+                        <td>Model:</td><td td:text="${order.modelId}">super model</td>
+                        <td>Date of Placement:</td><td th:text="${order.placementDate}"></td>
+                        <td>Date of Delivery</td><td th:text="${order.deliveryDate}"></td>
+                        <td>Status:</td><td th:text="${order.status}"></td>
+                </tr>
+            </div>
+        </div>
+    </div>
 </div> <!-- div body ends here -->
 
 <div id="footer" >
