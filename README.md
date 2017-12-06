@@ -2,7 +2,7 @@
 
 ## Webapplication for Oxymat.
 
-* This project includes:
+*This project includes:*
 
 * Item Index.html
 * Item Products.html
@@ -14,10 +14,10 @@
 * Item styles.css
 	* Item One stylesheet containing all the styles for the entire project
 
-* Contains but unused:
+*Contains but unused:*
 
 * Item Create.html
 * Item Stock.html
 
 
-** Project by [Chuwyn](https://github.com/Chuwyn) and [Killfill](https://github.com/Killfill0o).
+**Project by [Chuwyn](https://github.com/Chuwyn) and [Killfill](https://github.com/Killfill0o).**
