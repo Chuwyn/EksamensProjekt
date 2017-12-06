@@ -17,14 +17,14 @@ public class UserRepository implements ICrud<User> {
 
     @Override
     public void create(User user) {
-        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"')");
+        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone, display) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"','"+user.getDisplay()+"')");
     }
 
     @Override
     public User read(int id) {
         SqlRowSet user = jdbc.queryForRowSet("SELECT * FROM users WHERE id = '" + id + "'");
         while(user.next()){
-            return new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"));
+            return new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"), user.getInt("display"));
         }
         return null;
     }
@@ -33,9 +33,20 @@ public class UserRepository implements ICrud<User> {
     public ArrayList<User> readAll() {
         ArrayList<User> userList = new ArrayList<User>();
         SqlRowSet user = jdbc.queryForRowSet("SELECT * FROM users");
+        User us = new User();
+        int count = 0;
+        System.out.println(" ");
+        System.out.println("Display user: x  ###  ID  FULL NAME   EMAIL              PHONE");
+        System.out.println(" ");
         while(user.next()){
-            userList.add(new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password")));
+            userList.add(new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"), user.getInt("display")));
+            us.setDisplay(user.getInt("display"));
+            count += 1;
+            System.out.println("Display user: "+us.getDisplay()+"  ###  "+user.getInt("id")+"   "+user.getString("firstname")+" "+user.getString("lastname")+"  "+user.getString("mail")+"  "+user.getString("phone"));
         }
+        System.out.println(" ");
+        System.out.println("Display "+count+" users from database");
+        System.out.println(" ");
 
 
         return userList;
@@ -48,8 +59,10 @@ public class UserRepository implements ICrud<User> {
                 "lastname  = '" + user.getLastname()    + "'," +
                 "username  = '" + user.getUsername()    + "'," +
                 "password  = '" + user.getPassword()    + "'," +
-                "mail      = '" + user.getMail()       + "'," +
-                "phone     = '" + user.getPhone() + "' WHERE id = '" + user.getId() +"'");
+                "mail      = '" + user.getMail()        + "'," +
+                "phone     = '" + user.getPhone()       + "'," +
+                "display   = '" + user.getDisplay()     + "+" +
+                "' WHERE id = '" + user.getId() +"'");
     }
 
     @Override
@@ -60,7 +73,7 @@ public class UserRepository implements ICrud<User> {
     public User findUserByUsername(String username, String password){
         SqlRowSet user = jdbc.queryForRowSet("SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
         while(user.next()){
-            return new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"));
+            return new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"), user.getInt("display"));
         }
         return null;
     }
