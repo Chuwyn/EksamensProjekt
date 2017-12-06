@@ -11,6 +11,9 @@ import oxymat.demo.ProductRepository;
 import oxymat.demo.User;
 import oxymat.demo.UserRepository;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Controller
 public class UController {
 
@@ -45,6 +48,11 @@ public class UController {
 
         activeUser = users.findUserByUsername(login.getUsername(), login.getPassword());
         System.out.println("Welcome " + activeUser.getFirstname());
+            Date dNow = new Date( );
+            SimpleDateFormat ft =
+            new SimpleDateFormat ("E dd.MM.yyyy 'at' hh:mm:ss a" );
+        System.out.println("You're logged in "+ft.format(dNow));
+        System.out.println(" ");
         
         return "orders";
     }

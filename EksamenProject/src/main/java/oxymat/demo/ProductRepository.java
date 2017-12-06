@@ -36,13 +36,20 @@ public class ProductRepository implements ICrud<Product> {
         ArrayList<Product> productList = new ArrayList<Product>();
         SqlRowSet product = jdbc.queryForRowSet("SELECT * FROM models");
         Product prod = new Product();
+        int count = 0;
+        System.out.println("Display product: x  ###  ID NAME PRICE");
+        System.out.println(" ");
         while(product.next()){
             productList.add(new Product(product.getInt("id"), product.getString("name"), product.getString("price"), prod.getDisplay()));
             if(prod.getDisplay()==3) {prod.setDisplay(0);}
             int newDisplay = prod.getDisplay()+1;
             prod.setDisplay(newDisplay);
-            System.out.println("display: "+prod.getDisplay());
+            count += 1;
+            System.out.println("Display product: "+prod.getDisplay()+"  ###  "+product.getInt("id")+"  "+product.getString("name")+"  "+ product.getString("price"));
         }
+        System.out.println(" ");
+        System.out.println("Display "+count+" products from database");
+        System.out.println(" ");
 
 
         return productList;

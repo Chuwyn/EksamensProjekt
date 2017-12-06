@@ -34,11 +34,19 @@ public class UserRepository implements ICrud<User> {
         ArrayList<User> userList = new ArrayList<User>();
         SqlRowSet user = jdbc.queryForRowSet("SELECT * FROM users");
         User us = new User();
+        int count = 0;
+        System.out.println(" ");
+        System.out.println("Display user: x  ###  ID  FULL NAME   EMAIL              PHONE");
+        System.out.println(" ");
         while(user.next()){
             userList.add(new User(user.getInt("id"), user.getString("firstname"), user.getString("lastname"), user.getString("mail"), user.getString("phone"), user.getString("username"), user.getString("password"), user.getInt("display")));
             us.setDisplay(user.getInt("display"));
-            System.out.println("user display: "+us.getDisplay());
+            count += 1;
+            System.out.println("Display user: "+us.getDisplay()+"  ###  "+user.getInt("id")+"   "+user.getString("firstname")+" "+user.getString("lastname")+"  "+user.getString("mail")+"  "+user.getString("phone"));
         }
+        System.out.println(" ");
+        System.out.println("Display "+count+" users from database");
+        System.out.println(" ");
 
 
         return userList;
