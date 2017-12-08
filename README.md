@@ -5,6 +5,7 @@
 *This project includes:*
 
 * Index.html
+	* Login session (WIP)
 * Products.html
 	* Listing all products /w info
 * Users.html
