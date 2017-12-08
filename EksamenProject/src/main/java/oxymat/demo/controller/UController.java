@@ -25,6 +25,10 @@ public class UController {
     @Autowired
     private ProductRepository products = new ProductRepository();
 
+    /** Create User object called activeUser. activeUser contains "null" and 0's, just to act as a temp loginSession.
+        When the user login into the index page, this activeUser will be replaced with information from the logged in user
+        making the login-menu disappear when the user go back to the homepage.
+     **/
     private User activeUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
 
 
@@ -34,7 +38,7 @@ public class UController {
         model.addAttribute("us", model);
         model.addAttribute("users", users);
 
-        System.out.println("Welcome " + activeUser.getFirstname());
+        System.out.println("activeUser: " + activeUser.getFirstname());
 
         return "index";
     }
