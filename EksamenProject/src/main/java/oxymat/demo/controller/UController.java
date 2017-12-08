@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import oxymat.demo.Login;
 import oxymat.demo.ProductRepository;
 import oxymat.demo.User;
@@ -24,13 +25,16 @@ public class UController {
     @Autowired
     private ProductRepository products = new ProductRepository();
 
-    private User activeUser;
+    private User activeUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
 
 
     @GetMapping("/")
-    public String index(Model model) {
-
+    public String index(Model model, User users) {
+        users = activeUser;
         model.addAttribute("us", model);
+        model.addAttribute("users", users);
+
+        System.out.println("Welcome " + activeUser.getFirstname());
 
         return "index";
     }
@@ -57,11 +61,11 @@ public class UController {
         return "orders";
     }
 
-
     @GetMapping("/login")
     public String login(Model model){
 
         model.addAttribute("login", new Login());
+
 
         return "index";
     }
@@ -107,6 +111,7 @@ public class UController {
     @GetMapping("/users")
     public String users(Model model) {
 
+        System.out.println("Welcome " + activeUser.getFirstname());
         model.addAttribute("users", users.readAll());
 
         return "users";

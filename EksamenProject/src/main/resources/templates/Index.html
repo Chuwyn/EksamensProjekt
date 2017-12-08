@@ -51,23 +51,25 @@
     <!-- Div body, box for all content between header and footer -->
     <div id="body" >
         <div id="index_content">
-
             <table>
+                <div th:each="user : ${users}">
+                    <div th:if="${user.username.equals('null')}">
+                        <form action="/login"  th:action="@{/login}" method="post" th:object="${login}">
+                            <tr>
+                                <td><p>Username:</p><input type="text" th:field="*{username}" /></td>
+                                <td><p>Password:</p><input type="text" th:field="*{password}" /></td>
 
+                                <td><input type="submit" value=">" class="btn-round"/></td>
+                            </tr>
+                        </form>
+                    </div>
 
-                <form action="/login"  th:action="@{/login}" method="post" th:object="${login}">
-
-                    <tr>
-                        <td><p>Username:</p><input type="text" th:field="*{username}" /></td>
-                        <td><p>Password:</p><input type="text" th:field="*{password}" /></td>
-
-                        <td><input type="submit" value=">" class="btn-round"/></td>
-                    </tr>
-
-                </form>
-
-
-
+                    <div th:unless="${user.username.equals('null')}">
+                        <div>
+                            <p>YOU ARE LOGGED IN AS: <p th:text="${user.username}"></p></p>
+                        </div>
+                    </div>
+                </div>
             </table>
         </div>
         <div id="bot_container">
