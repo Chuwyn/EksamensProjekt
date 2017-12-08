@@ -66,6 +66,8 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_id_uindex` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
 /* Create content into users and models */
 
 INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Alpha","Test","A","123","Alpha@Oxymat.com","+45 12 34 56 78","1");
@@ -99,4 +101,5 @@ INSERT INTO oxydb.models (name,price) VALUES ("X1800","1250");
 INSERT INTO oxydb.models (name,price) VALUES ("X2300","1600");
 INSERT INTO oxydb.models (name,price) VALUES ("X4000","2150");
 INSERT INTO oxydb.models (name,price) VALUES ("X4600","2500");
+
 
