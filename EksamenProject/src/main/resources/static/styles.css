@@ -22,7 +22,7 @@ table tr h6{
     margin-bottom: 40%;
 }
 
-<<<<<<< HEAD
+
 .orders{
     height: 240px;
     width: 33%;
@@ -52,11 +52,11 @@ table tr h6{
     box-shadow: 0 0 0 3px black inset;
 }
 
-.products2{
+.products2 {
     height: 240px;
     width: 33%;
     background-color: #eee;
-    display:table-cell;
+    display: table-cell;
     float: right;
     margin-left: 0;
     margin-bottom: 0.5%;
@@ -64,7 +64,8 @@ table tr h6{
     text-align: center;
     font: 14px Lato;
     box-shadow: 0 0 0 3px black inset;
-=======
+}
+
 li {
     list-style: none;
     color: #bbb;
@@ -74,7 +75,6 @@ li {
     font-family: lato;
     font-weight: normal;
     margin-top: 5px;
->>>>>>> 3029ecf9dc0b85d4b16afcbdf20bd54c6d13a6c5
 }
 
 

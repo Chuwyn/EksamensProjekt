@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import oxymat.demo.*;
 
-import java.util.ArrayList;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -79,13 +78,9 @@ public class UController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute User user){
-<<<<<<< HEAD
-        users.create(user);
-=======
 
         users.create(user);
 
->>>>>>> 3029ecf9dc0b85d4b16afcbdf20bd54c6d13a6c5
         return "redirect:/";
     }
 
@@ -102,24 +97,16 @@ public class UController {
 
     @GetMapping("/orders")
     public String orders(Model model) {
-<<<<<<< HEAD
+
         model.addAttribute("order", new Order());
         model.addAttribute("orders", orders.readAll());
         model.addAttribute("orderstop5", orders.gettop10());
-=======
 
-        model.addAttribute("us", model);
-
->>>>>>> 3029ecf9dc0b85d4b16afcbdf20bd54c6d13a6c5
         return "orders";
     }
 
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 3029ecf9dc0b85d4b16afcbdf20bd54c6d13a6c5
     @GetMapping("/users")
     public String users(Model model) {
 
@@ -129,7 +116,7 @@ public class UController {
     }
 
 
-<<<<<<< HEAD
+
 
 
 
@@ -149,8 +136,7 @@ public class UController {
         return "orders";
     }
 
-=======
->>>>>>> 3029ecf9dc0b85d4b16afcbdf20bd54c6d13a6c5
+
     @GetMapping("/stock")
     public String stock(Model model) {
 

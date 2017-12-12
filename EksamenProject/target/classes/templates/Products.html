@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>OXYMAT - Index</title>
+    <title>OXYMAT - Products</title>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'/>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'/>
     <link rel="stylesheet" type="text/css"
@@ -53,21 +53,21 @@
         <div id="product_content">
 
             <div th:each="product : ${products}">
-                <div class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
+                <div id="products_left" class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
                     <tr>
                         <td>Model: </td><td th:text="${product.title}">my product</td>
                         <br/>
-                        <td> <img src="https://imgur.com/EKFt1fw.png" width="50%" height="50%"/></td>
+                        <td> <img src="https://imgur.com/EKFt1fw.png"/></td>
                         <br/>
                         <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
                         <!-- <td th:text="${product.getDisplay()}">number</td> -->
                     </tr>
                 </div>
-                <div class="products2" th:if="${product.getDisplay()} &gt; 2 and ${product.getDisplay()} &lt; 4">
+                <div class="products" th:if="${product.getDisplay()} &gt; 2 and ${product.getDisplay()} &lt; 4">
                     <tr>
                         <td>Model: </td><td th:text="${product.title}">my product</td>
                         <br/>
-                        <td> <img src="https://imgur.com/EKFt1fw.png" width="50%" height="50%"/></td>
+                        <td> <img src="https://imgur.com/EKFt1fw.png"/></td>
                         <br/>
                         <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
                         <!-- <td th:text="${product.getDisplay()}">number</td> -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 
     <title>OXYMAT - Orders</title>
@@ -62,7 +62,7 @@
                         <td>Order Number:</td><td th:text="${order.id}">my order</td>
                         <td>User Name:</td><td th:text="${order.userId}">my user</td>
                         <td>Customer Name:</td><td th:text="${order.customerId}">my customer</td>
-                        <td>Model:</td><td td:text="${order.modelId}">super model</td>
+                        <td>Model:</td><td th:text="${order.modelId}">super model</td>
                         <td>Date of Placement:</td><td th:text="${order.placementDate}"></td>
                         <td>Date of Delivery</td><td th:text="${order.deliveryDate}"></td>
                         <td>Status:</td><td th:text="${order.status}"></td>
