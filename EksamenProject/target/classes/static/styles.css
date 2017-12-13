@@ -38,18 +38,7 @@ li {
     margin-top: 5px;
 }
 
-
 /** Main styles start**/
-
-.btn-round{
-    color: #fff;
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: #A8C1DC;
-    border: solid #A8C1DC 3px;
-    border-radius: 50%;
-}
 
 .fixed-position{
     position: fixed;
@@ -304,8 +293,14 @@ li {
     min-height: 150px;
     max-height: 500px;
 }
-/** Index.html end **/
 
+#index_logout p{
+    float: left;
+    width: 250px;
+    height: 50px;
+}
+
+/** Index.html end **/
 
 /** Products.html start **/
 
@@ -334,7 +329,6 @@ li {
     margin-right: 2px;
     margin-bottom: 0.5%;
 }
-
 
 .products{
     height: 240px;
@@ -371,8 +365,6 @@ li {
 
 /** Products.html end **/
 
-
-
 /** Users.html start **/
 
 .users img{
@@ -381,6 +373,7 @@ li {
     float: left;
     margin-right: 7px;
     margin-left: 5px;
+    border: 1px black;
 }
 
 #users_left{
@@ -402,8 +395,6 @@ li {
 }
 
 /** Users.html end **/
-
-
 
 /** Webkits starts **/
 

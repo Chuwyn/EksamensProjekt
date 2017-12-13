@@ -35,6 +35,7 @@ public class UController {
      **/
     private User activeUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
 
+    private User logoutUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
 
 
     @GetMapping("/")
@@ -42,12 +43,25 @@ public class UController {
         users = activeUser;
         model.addAttribute("us", model);
         model.addAttribute("users", users);
+        model.addAttribute("logout", logoutUser);
 
         System.out.println("activeUser: " + activeUser.getFirstname());
 
         return "index";
     }
 
+    @PostMapping("/logout")
+    public String logout(Model model){
+        System.out.println("Goodbye " + activeUser.getFirstname());
+        activeUser = logoutUser;
+        Date dNow = new Date( );
+        SimpleDateFormat ft =
+                new SimpleDateFormat ("E dd.MM.yyyy 'at' hh:mm:ss a" );
+        System.out.println("You're logged out "+ft.format(dNow));
+        System.out.println(" ");
+
+        return "redirect:/";
+    }
 
     @ModelAttribute("login")
     public Login addEmptyLogin(){
@@ -112,7 +126,6 @@ public class UController {
     public String orders(Model model) {
 
         model.addAttribute("orders", orders.displayAll());
-        model.addAttribute("orderstop5", orders.gettop10());
         model.addAttribute("search", new Order());
 
         System.out.println(orders.displayAll().toString());
@@ -131,7 +144,6 @@ public class UController {
 
         return "users";
     }
-
 
     @GetMapping("/search")
     public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model) {

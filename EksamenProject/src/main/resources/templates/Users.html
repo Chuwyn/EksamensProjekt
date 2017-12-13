@@ -51,7 +51,12 @@
         <div id="user_content">
             <div th:each="user : ${users}">
                 <div id="users_left" class="users" th:if="${user.getDisplay()} &gt; 0 and ${user.getDisplay()} &lt; 3">
-                    <img src="https://imgur.com/EKFt1fw.png" />
+                    <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
+                    <div th:if="${user.getId()}==2"><img src="https://imgur.com/80I5xRc.png"/></div>
+                    <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                    <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
+                    <div th:if="${user.getId()}==5"><img src=" https://imgur.com/ZB2H6GL.png"/></div>
+                    <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
                     <tr>
                         <td>Name: </td>
                         <td th:text="${user.getFirstname()}">firstname</td>
@@ -66,7 +71,12 @@
                 </div>
 
                 <div class="users" th:if="${user.getDisplay()} &gt; 2 and ${user.getDisplay()} &lt; 4">
-                    <img src="https://imgur.com/EKFt1fw.png" />
+                    <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
+                    <div th:if="${user.getId()}==2"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                    <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                    <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
+                    <div th:if="${user.getId()}==5"><img src="https://imgur.com/80I5xRc.png"/></div>
+                    <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
                     <tr>
                         <td>Name: </td>
                         <td th:text="${user.getFirstname()}">firstname</td>

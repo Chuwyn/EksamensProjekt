@@ -58,23 +58,46 @@ CREATE TABLE `users` (
 
 
 
-/* Create content into users and models */
+/* Create content into tabels */
 
 
-INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (1,'Mads Jensen',123456789,'vej 2, by 25','+45 12 34 56 78','MJ@customer.com');
-INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (2,'Poul Hansen',987654321,'vej 3, by 28','+45 87 65 43 21','PH@customer.com');
-INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (3,'Per Madsen',9999999,'vej 151b, by 9000','+45 88 88 88 88','PM@customer.com');
-INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (4,'Peter Jensen',12121212,'vej 1a, by 10','+45 12 12 12 12','PJ@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Mads Jensen',0123456789,'vej 2, by 2512','+45 12 34 56 78','MJ@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Poul Hansen',9876543210,'gade 4, by 2810','+45 87 65 43 21','POH@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Per Madsen',9999999999,'vej 151b, by 9000','+45 88 88 88 88','PM@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Peter Jensen',1212121212,'alle 1a, by 2010','+45 12 12 12 12','PJ@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Mette Jensen',9812763450,'vej 2, by 3650','+45 12 39 12 38','MEJ@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Søren Johnson',1298347605,'gade 23, by 2890','+45 37 35 33 11','SJ@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Pernille Hansen',1357924680,'alle 11b, by 4000','+45 82 18 77 88','PH@customer.com');
+INSERT INTO oxydb.customers (name, cvr, Adresse, phone, mail) VALUES ('Mikkel Hansen',2468013579,'vej 1a, by 2018','+45 12 98 34 76','MH@customer.com');
 
-INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (1,1,3,15,'2012/02/23','2012/03/05',1);
-INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (2,3,2,20,'2001/09/04','2002/01/02',0);
-INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (3,4,1,5,'2017/10/20','2018/04/01',2);
 
-INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Alpha","Test","A","123","Alpha@Oxymat.com","+45 12 34 56 78","1");
-INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Beta","Beta","B","123","Betaa@Oxymat.com","+45 12 34 56 78","2");
-INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Gamma","Tester","C","1234","Gamma@Oxymat.com","+45 12 34 56 78","3");
-INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Root","Root","root","root","Root@Oxymat.com","+45 00 00 00 00","1");
-INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Default","Gateway","1","1","IP@Oxymat.com","+45 19 21 68 01","1");
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (1,3,15,'2012/02/23','2012/03/05',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (3,2,20,'2001/09/04','2002/01/02',1);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (4,5,5,'2017/10/20','2017/12/24',0);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (5,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (2,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (5,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (5,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (5,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (2,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (2,6,21,'2017/12/24','2018/12/24',3);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (1,1,1,'2015/12/24','2015/12/24',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (3,2,20,'2001/09/04','2002/01/02',0);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (4,5,5,'2017/10/20','2018/04/01',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (1,1,1,'2015/12/24','2015/12/24',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (3,2,20,'2001/09/04','2002/01/02',0);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (4,5,5,'2017/10/20','2018/04/01',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (1,1,1,'2015/12/24','2015/12/24',2);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (3,2,20,'2001/09/04','2002/01/02',0);
+INSERT INTO oxydb.orders (user, customer, model, placement_date, delivery_date, status) VALUES (4,5,5,'2017/10/20','2018/04/01',2);
+
+
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Anders","Andersen","And","andand","AndersA@Oxymat.com","+45 12 34 56 78","1");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Hans","Jensen","HJ","bondegaard","HJ@Oxymat.com","+45 32 13 21 32","2");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Bente","Mikkelsen","BM","password","BM@Oxymat.com","+45 68 01 19 21","3");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Ole","Bole","OB","kjole","Kjole@Oxymat.com","+45 13 57 92 46","1");
+INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Alpha","Test","Alpha","123","Alpha@Oxymat.com","+45 01 01 01 01","2");
+
 
 INSERT INTO oxydb.models (name,price) VALUES ("H13","300");
 INSERT INTO oxydb.models (name,price) VALUES ("H26","500");

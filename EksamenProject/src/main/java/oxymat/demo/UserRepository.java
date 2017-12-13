@@ -17,7 +17,19 @@ public class UserRepository implements ICrud<User> {
 
     @Override
     public void create(User user) {
-        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone, display) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"','"+user.getDisplay()+"')");
+        int display = 1;
+        SqlRowSet users = jdbc.queryForRowSet("SELECT * FROM users");
+        while(users.next()){
+            if(display>3){
+               display = 1;
+            }
+            System.out.println("display test: "+display);
+            display++;
+        }
+        if(display>3){
+            display = 1;
+        }
+        jdbc.update("INSERT INTO users (firstname, lastname, username, password, mail, phone, display) VALUES ('"+ user.getFirstname() + "','" + user.getLastname() + "','" + user.getUsername() + "','" +user.getPassword()+"','"+user.getMail()+"','"+user.getPhone() +"','"+display+"')");
     }
 
     @Override

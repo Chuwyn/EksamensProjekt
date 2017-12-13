@@ -59,21 +59,25 @@
                             <tr>
                                 <td><p>Username:</p><input type="text" th:field="*{username}" /></td>
                                 <td><p>Password:</p><input type="text" th:field="*{password}" /></td>
-
-                                <td><input type="submit" value=">" class="btn-round"/></td>
+                                <td><p style="color:#fff;">|</p><input type="submit" value="Login" /></td>
+                            </tr>
+                            <tr><td><p></p></td></tr> <!-- Lazy space between create button and the other inputs -->
+                            <tr>
+                                <td><a href="/create"><input type="button" value="Create User" /></a></td>
                             </tr>
                         </form>
-
                     </div>
 
                     <div th:unless="${user.username.equals('null')}">
-                        <div>
-                            <p>YOU ARE LOGGED IN AS: <p th:text="${user.username}"></p></p>
-                        </div>
+                        <form id="index_logout" action="/"  th:action="logout" method="post">
+                            <tr>
+                                <td><span><h3 style="float:left; margin:0 10px">WELCOME </h3></span><span><h3 style="float:left;margin:0;" th:text="${user.firstname}"></h3></span> <span> <h3 style="float:left;margin:0 15px 0 3px" th:text="${user.lastname}"></h3></span></td>
+                                <td><input type="submit" value="Logout"/></td><td><a href="/create"><input type="button" value="Create User" /></a></td>
+                            </tr>
+                        </form>
                     </div>
                 </div>
             </table>
-            <p><a href="/create">CREATE USER</a></p>
         </div>
         <div id="bot_container">
             <div class="bot_body">
