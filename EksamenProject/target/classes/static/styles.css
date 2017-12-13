@@ -22,13 +22,8 @@ table tr h6{
     margin-bottom: 40%;
 }
 
-#order_results p{
+.orders p{
     padding-right: 10px;
-    float: left;
-}
-
-#order_results h7{
-    padding-right: 2px;
     float: left;
 }
 

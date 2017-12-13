@@ -48,35 +48,32 @@
 
     <div id="filler" ></div> <!-- filler-box, makes page start bellow the header (which don't have any collision)-->
 
+
     <!-- Div body, box for all content between header and footer -->
     <div id="body" >
-
         <div id="order_search">
-            <form th:action="@{/search}" method="post" th:object="${order}">
-            <input type="text" th:field="*{id}" placeholder="Order ID"/>
+            <form th:action="@{/search}" method="get" th:object="${search}">
+                <input type="text" th:field="*{id}" placeholder="Order ID"/>
             </form>
         </div>
-        <div id="order_results">
-            <div th:each="order : ${orders}">
-                <div class="orders">
-                    <tr>
-                        <p></p>
-                        <td><p>Order Number:</p><p th:text="${order.id}">my order</p><p>-</p></td>
-                        <td><p>User Name:</p><p th:text="${order.user}">my user</p><p>-</p></td>
-                        <td><p>Customer Name:</p><p th:text="${order.customer}">my customer</p><p>-</p></td>
-                        <td><p>Model:</p><p th:text="${order.modelname}">super model</p><p>-</p></td>
-                        <td><p>Date of Placement:</p><p th:text="${order.placementDate}"></p><p>-</p></td>
-                        <td><p>Date of Delivery</p><p th:text="${order.deliveryDate}"></p><p>-</p></td>
-                        <td><p>Status:</p><p th:text="${order.status}"></p></td>
-                    </tr>
-                </div>
+        <div th:each="order : ${orders}">
+            <div class="orders">
+                <tr>
+                    <p></p>
+                    <td><p>Order Number:</p><p th:text="${order.id}">my order</p><p>-</p></td>
+                    <td><p>User Name:</p><p th:text="${order.user}">my user</p><p>-</p></td>
+                    <td><p>Customer Name:</p><p th:text="${order.customer}">my customer</p><p>-</p></td>
+                    <td><p>Model:</p><p th:text="${order.modelname}">super model</p><p>-</p></td>
+                    <td><p>Date of Placement:</p><p th:text="${order.placementDate}"></p><p>-</p></td>
+                    <td><p>Date of Delivery</p><p th:text="${order.deliveryDate}"></p><p>-</p></td>
+                    <td><p>Status:</p><p th:text="${order.status}"></p></td>
+                </tr>
             </div>
         </div>
 
         <div style="clear:both;"></div>
     </div>
-
-    <div id="bot_container">
+        <div id="bot_container">
             <div class="bot_body">
                 <div class="bot_img">
                     <img src="https://imgur.com/MgSFha7.png"/>
@@ -147,8 +144,12 @@
                 <div class="bot_logo2"><p>All RIGHTS RESERVED / OXYMAT A/S 2016</p></div>
                 <div class="bot_logo3"><img src="https://www.oxymat.com/wp-content/themes/oxymat/skin/default/images/bottom-logo.png"/></div><div class="bot_logo"></div>
             </div>
+
+
         </div>
-    </div> <!-- div footer ends here -->
+</div> <!-- div body ends here -->
+
+
 
 </body> <!-- body ends here -->
 
