@@ -1,15 +1,25 @@
 package oxymat.demo;
 
 public class Customer {
+    private int id;
     private String name;
     private int cvr;
     private String address;
     private String phone;
     private String mail;
 
-    public Customer(){
-
+    public Customer(int id, String name, int cvr, String address, String phone, String mail ){
+    this.id = id;
+    this.name = name;
+    this.cvr = cvr;
+    this.address = address;
+    this.phone = phone;
+    this.mail = mail;
     }
+
+    public int getId() {return id;}
+
+    public void setId (int value) {this.id = value;}
 
     public String getName(){
         return name;

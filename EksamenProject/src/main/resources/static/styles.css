@@ -22,48 +22,14 @@ table tr h6{
     margin-bottom: 40%;
 }
 
-
-.orders{
-    height: 240px;
-    width: 33%;
-    background-color: #eee;
-    display:table-cell;
+#order_results p{
+    padding-right: 10px;
     float: left;
-    margin-right: 0.5%;
-    margin-bottom: 0.5%;
-    padding-top: 10px;
-    text-align: center;
-    font: 14px Lato;
-    box-shadow: 0 0 0 3px black inset;
 }
 
-
-.products{
-    height: 240px;
-    width: 33%;
-    background-color: #eee;
-    display:table-cell;
+#order_results h7{
+    padding-right: 2px;
     float: left;
-    margin-right: 0.5%;
-    margin-bottom: 0.5%;
-    padding-top: 10px;
-    text-align: center;
-    font: 14px Lato;
-    box-shadow: 0 0 0 3px black inset;
-}
-
-.products2 {
-    height: 240px;
-    width: 33%;
-    background-color: #eee;
-    display: table-cell;
-    float: right;
-    margin-left: 0;
-    margin-bottom: 0.5%;
-    padding-top: 10px;
-    text-align: center;
-    font: 14px Lato;
-    box-shadow: 0 0 0 3px black inset;
 }
 
 li {
@@ -313,7 +279,25 @@ li {
 
 /** Main styles end **/
 
+/** Order styles start**/
 
+.orders{
+    height: auto;
+    width: 90%;
+    background-color: #eee;
+    display:table-cell;
+    float: left;
+    margin-right: 5%;
+    margin-left:  5%;
+    margin-bottom: 1%;
+    padding: 10px;
+    text-align: center;
+    font: 14px Lato;
+    box-shadow: 0 0 0 3px black inset;
+}
+
+
+/** Order styles end**/
 
 /** Index.html start **/
 
@@ -325,9 +309,7 @@ li {
     min-height: 150px;
     max-height: 500px;
 }
-
-/** Index.html start **/
-
+/** Index.html end **/
 
 
 /** Products.html start **/
@@ -354,16 +336,33 @@ li {
 
 #products_left{
     float: left;
-    margin-right: 0.5%;
+    margin-right: 2px;
     margin-bottom: 0.5%;
 }
+
 
 .products{
     height: 240px;
     width: 33%;
     background-color: #eee;
     display:table-cell;
+    float: left;
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
+    padding-top: 10px;
+    text-align: center;
+    font: 14px Lato;
+    box-shadow: 0 0 0 3px black inset;
+}
+
+.products2 {
+    height: 240px;
+    width: 33%;
+    background-color: #eee;
+    display: table-cell;
     float: right;
+    margin-left: 0;
+    margin-bottom: 0.5%;
     padding-top: 10px;
     text-align: center;
     font: 14px Lato;
@@ -371,7 +370,7 @@ li {
 }
 
 .products:hover, .products2:hover{
-    box-shadow: 0 0 0 3px black inset;
+    box-shadow: 0 0 0 2px black inset;
     background-color: #ddd;
 }
 

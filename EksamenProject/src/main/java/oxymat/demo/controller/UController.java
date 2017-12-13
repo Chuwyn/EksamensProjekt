@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.*;
-import oxymat.demo.*;;
+import oxymat.demo.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -62,7 +62,7 @@ public class UController {
         System.out.println("You're logged in "+ft.format(dNow));
         System.out.println(" ");
         
-        return "orders";
+        return "redirect:/";
     }
 
     @GetMapping("/login")
@@ -97,7 +97,7 @@ public class UController {
     @GetMapping("/products")
     public String products(Model model) {
 
-
+        model.addAttribute("products", products.readAll());
 
         return "products";
     }
@@ -107,8 +107,11 @@ public class UController {
     public String orders(Model model) {
 
         model.addAttribute("order", new Order());
-        model.addAttribute("orders", orders.readAll());
+        model.addAttribute("orders", orders.displayAll());
         model.addAttribute("orderstop5", orders.gettop10());
+
+        System.out.println(orders.displayAll().toString());
+
 
         return "orders";
     }
@@ -125,18 +128,12 @@ public class UController {
     }
 
 
-
-
-
-
-
     @GetMapping("/search")
     public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model) {
 
         model.addAttribute("search", orders.findByOrderNumber(id));
         return "orders";
     }
-
 
 
     @PostMapping("/search")
