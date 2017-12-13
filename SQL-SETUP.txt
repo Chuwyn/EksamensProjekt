@@ -41,16 +41,6 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-/* Create Stock */
-
-CREATE TABLE `stock` (
-  `models_id` int(11) NOT NULL,
-  `models_name` text NOT NULL,
-  `in_stock` int(11) DEFAULT '0',
-  UNIQUE KEY `stock_models_id_uindex` (`models_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 /* Create Users */
 
 CREATE TABLE `users` (
@@ -69,6 +59,16 @@ CREATE TABLE `users` (
 
 
 /* Create content into users and models */
+
+
+INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (1,'Mads Jensen',123456789,'vej 2, by 25','+45 12 34 56 78','MJ@customer.com');
+INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (2,'Poul Hansen',987654321,'vej 3, by 28','+45 87 65 43 21','PH@customer.com');
+INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (3,'Per Madsen',9999999,'vej 151b, by 9000','+45 88 88 88 88','PM@customer.com');
+INSERT INTO oxydb.customers (ID, name, cvr, Adresse, phone, mail) VALUES (4,'Peter Jensen',12121212,'vej 1a, by 10','+45 12 12 12 12','PJ@customer.com');
+
+INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (1,1,3,15,'2012/02/23','2012/03/05',1);
+INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (2,3,2,20,'2001/09/04','2002/01/02',0);
+INSERT INTO oxydb.orders (id, user, customer, model, placement_date, delivery_date, status) VALUES (3,4,1,5,'2017/10/20','2018/04/01',2);
 
 INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Alpha","Test","A","123","Alpha@Oxymat.com","+45 12 34 56 78","1");
 INSERT INTO oxydb.users (firstname,lastname,username,password,mail,phone,display) VALUES ("Beta","Beta","B","123","Betaa@Oxymat.com","+45 12 34 56 78","2");
