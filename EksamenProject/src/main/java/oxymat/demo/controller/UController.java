@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import oxymat.demo.*;;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 public class UController {
@@ -23,6 +25,9 @@ public class UController {
 
     @Autowired
     private OrderRepository orders = new OrderRepository();
+
+
+    private List<Order> searchResults = new ArrayList<Order>();
 
     /** Create User object called activeUser. activeUser contains "null" and 0's, just to act as a temp loginSession.
         When the user login into the index page, this activeUser will be replaced with information from the logged in user
@@ -107,8 +112,8 @@ public class UController {
     public String orders(Model model) {
 
         model.addAttribute("order", new Order());
-        model.addAttribute("orders", orders.readAll());
-        model.addAttribute("orderstop5", orders.gettop10());
+        model.addAttribute("search", new Order());
+        model.addAttribute("ordersList", orders.readAll());
 
         return "orders";
     }
@@ -133,16 +138,21 @@ public class UController {
     @GetMapping("/search")
     public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model) {
 
-        model.addAttribute("search", orders.findByOrderNumber(id));
-        return "orders";
+        searchResults.clear();
+
+        searchResults.add(orders.findByOrderNumber(id));
+
+        model.addAttribute("search", new Order());
+        model.addAttribute("searchResults", searchResults);
+        return "searchResult";
     }
 
 
 
     @PostMapping("/search")
     public String searchOrdersById(@ModelAttribute Order order, Model model) {
-        model.addAttribute("order", order);
-        return "orders";
+        model.addAttribute("ordersList", order);
+        return "redirect:/orders";
     }
 
 

@@ -51,12 +51,12 @@
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
     <div id="order_search">
-        <form th:action="@{/search}" method="post" th:object="${order}">
+        <form th:action="@{/search}" method="get" th:object="${search}">
             <input type="text" th:field="*{id}" placeholder="Order ID"/>
         </form>
     </div>
-    <div id="order_results">
-        <div th:each="order : ${orders}">
+    <div th:if="${#lists.isEmpty(searchResults)}" id="order_results">
+        <div th:each="order : ${ordersList}">
             <div class="orders">
                 <tr>
                         <td>Order Number:</td><td th:text="${order.id}">my order</td>
@@ -69,6 +69,9 @@
                 </tr>
             </div>
         </div>
+    </div>
+    <div th:unless="${#lists.isEmpty(searchResults)}" id="search_result">
+        IT WORKED
     </div>
 </div> <!-- div body ends here -->
 
