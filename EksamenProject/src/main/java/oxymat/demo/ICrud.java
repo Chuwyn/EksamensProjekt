@@ -9,5 +9,4 @@ public interface ICrud<T> {
     void update(T t);
     void delete(int id);
 
-
 }

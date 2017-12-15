@@ -58,7 +58,7 @@
                         <form action="/login"  th:action="@{/login}" method="post" th:object="${login}">
                             <tr>
                                 <td><p>Username:</p><input type="text" th:field="*{username}" /></td>
-                                <td><p>Password:</p><input type="text" th:field="*{password}" /></td>
+                                <td><p>Password:</p><input type="password" th:field="*{password}" /></td>
                                 <td><p style="color:#fff;">|</p><input type="submit" value="Login" /></td>
                             </tr>
                             <tr><td><p></p></td></tr> <!-- Lazy space between create button and the other inputs -->

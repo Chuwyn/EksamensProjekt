@@ -46,32 +46,45 @@
 
     <div id="filler" ></div> <!-- filler-box, makes page start bellow the header (which don't have any collision)-->
 
+
+
+
+
+
+
     <!-- Div body, box for all content between header and footer -->
     <div id="body" >
         <div id="product_content">
-
-            <div th:each="product : ${products}">
-                <div id="products_left" class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
-                    <tr>
-                        <td>Model: </td><td th:text="${product.title}">my product</td>
-                        <br/>
-                        <td> <img src="https://imgur.com/nrIWZwd.png"/></td>
-                        <br/>
-                        <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
-                        <!-- <td th:text="${product.getDisplay()}">number</td> -->
-                    </tr>
-                </div>
-                <div class="products" th:if="${product.getDisplay()} &gt; 2 and ${product.getDisplay()} &lt; 4">
-                    <tr>
-                        <td>Model: </td><td th:text="${product.title}">my product</td>
-                        <br/>
-                        <td> <img src="https://imgur.com/nrIWZwd.png"/></td>
-                        <br/>
-                        <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
-                        <!-- <td th:text="${product.getDisplay()}">number</td> -->
-                    </tr>
-                </div>
-            </div>
+            <div th:each="user : ${users}">
+                <div th:unless="${user.username.equals('null')}">
+                    <div th:each="product : ${products}">
+                        <div id="products_left" class="products" th:if="${product.getDisplay()} &gt; 0 and ${product.getDisplay()} &lt; 3">
+                            <tr>
+                                <td>Model: </td><td th:text="${product.title}">my product</td>
+                                <br/>
+                                <td> <img src="https://imgur.com/nrIWZwd.png"/></td>
+                                <br/>
+                                <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
+                                <!-- <td th:text="${product.getDisplay()}">number</td> -->
+                            </tr>
+                        </div>
+                        <div class="products" th:if="${product.getDisplay()} &gt; 2 and ${product.getDisplay()} &lt; 4">
+                            <tr>
+                                <td>Model: </td><td th:text="${product.title}">my product</td>
+                                <br/>
+                                <td> <img src="https://imgur.com/nrIWZwd.png"/></td>
+                                <br/>
+                                <td>Price: </td><td th:text="${product.price}">my price</td><td>DKK</td>
+                                <!-- <td th:text="${product.getDisplay()}">number</td> -->
+                            </tr>
+                        </div>
+                    </div>
+                </div> <!-- logged in -->
+                <div th:if="${user.username.equals('null')}">
+                    <h3>YOU DO NOT HAVE PERMISSION TO VIEW THE CURRENT PAGE</h3>
+                    <h3>PLEASE LOG IN TO ACCESS THE CONTENT</h3>
+                </div> <!-- Not logged in -->
+            </div> <!-- for each user -->
         </div>
 
         <div style="clear:both;"></div>

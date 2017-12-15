@@ -35,15 +35,13 @@ public class UController {
      **/
     private User activeUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
 
-    private User logoutUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
-
 
     @GetMapping("/")
     public String index(Model model, User users) {
         users = activeUser;
-        model.addAttribute("us", model);
         model.addAttribute("users", users);
-        model.addAttribute("logout", logoutUser);
+        model.addAttribute("us", model);
+        model.addAttribute("logout", activeUser);
 
         System.out.println("activeUser: " + activeUser.getFirstname());
 
@@ -53,7 +51,7 @@ public class UController {
     @PostMapping("/logout")
     public String logout(Model model){
         System.out.println("Goodbye " + activeUser.getFirstname());
-        activeUser = logoutUser;
+        activeUser = new User(0, "null", "null", "null", "null", "null", "null", 0);
         Date dNow = new Date( );
         SimpleDateFormat ft =
                 new SimpleDateFormat ("E dd.MM.yyyy 'at' hh:mm:ss a" );
@@ -114,8 +112,10 @@ public class UController {
 
     /** start here **/
     @GetMapping("/products")
-    public String products(Model model) {
+    public String products(Model model, User users) {
 
+        users = activeUser;
+        model.addAttribute("users", users);
         model.addAttribute("products", products.readAll());
 
         return "products";
@@ -123,8 +123,10 @@ public class UController {
 
 
     @GetMapping("/orders")
-    public String orders(Model model) {
+    public String orders(Model model, User users) {
 
+        users = activeUser;
+        model.addAttribute("users", users);
         model.addAttribute("orders", orders.displayAll());
         model.addAttribute("search", new Order());
 
@@ -137,8 +139,10 @@ public class UController {
 
 
     @GetMapping("/users")
-    public String users(Model model) {
+    public String users(Model model, User userss) {
 
+        userss = activeUser;
+        model.addAttribute("userss", userss);
         System.out.println("Welcome " + activeUser.getFirstname());
         model.addAttribute("users", users.readAll());
 
@@ -146,12 +150,14 @@ public class UController {
     }
 
     @GetMapping("/search")
-    public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model) {
+    public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model, User users) {
 
         searchResults.clear();
 
         searchResults.add(orders.findByOrderNumber(id));
 
+        users = activeUser;
+        model.addAttribute("users", users);
         model.addAttribute("search", new Order());
         model.addAttribute("searchResults", searchResults);
         return "searchResult";
@@ -164,14 +170,6 @@ public class UController {
         return "redirect:/orders";
     }
 
-
-    @GetMapping("/stock")
-    public String stock(Model model) {
-
-        model.addAttribute("us", model);
-
-        return "stock";
-    }
 
     /** end here **/
 

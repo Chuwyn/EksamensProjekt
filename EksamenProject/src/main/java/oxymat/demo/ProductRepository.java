@@ -42,11 +42,11 @@ public class ProductRepository implements ICrud<Product> {
         System.out.println(" ");
         while(product.next()){
             productList.add(new Product(product.getInt("id"), product.getString("name"), product.getString("price"), prod.getDisplay()));
+            System.out.println("Display product: "+prod.getDisplay()+"  ###  "+product.getInt("id")+"  "+product.getString("name")+"  "+ product.getString("price"));
             if(prod.getDisplay()==3) {prod.setDisplay(0);}
             int newDisplay = prod.getDisplay()+1;
             prod.setDisplay(newDisplay);
             count += 1;
-            System.out.println("Display product: "+prod.getDisplay()+"  ###  "+product.getInt("id")+"  "+product.getString("name")+"  "+ product.getString("price"));
         }
         System.out.println(" ");
         System.out.println("Display "+count+" products from database");

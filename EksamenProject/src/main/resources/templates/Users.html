@@ -48,49 +48,58 @@
 
     <!-- Div body, box for all content between header and footer -->
     <div id="body" >
-        <div id="user_content">
-            <div th:each="user : ${users}">
-                <div id="users_left" class="users" th:if="${user.getDisplay()} &gt; 0 and ${user.getDisplay()} &lt; 3">
-                    <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
-                    <div th:if="${user.getId()}==2"><img src="https://imgur.com/80I5xRc.png"/></div>
-                    <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
-                    <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
-                    <div th:if="${user.getId()}==5"><img src=" https://imgur.com/ZB2H6GL.png"/></div>
-                    <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
-                    <tr>
-                        <td>Name: </td>
-                        <td th:text="${user.getFirstname()}">firstname</td>
-                        <td th:text="${user.getLastname()}">lastname</td>
-                        <br/>
-                        <td>e-mail: </td>
-                        <td th:text="${user.getMail()}">e-mail</td>
-                        <br/>
-                        <td>phone: </td>
-                        <td th:text="${user.getPhone()}">phone</td>
-                    </tr>
+        <div th:each="user : ${userss}">
+            <div th:unless="${user.username.equals('null')}">
+                <div id="user_content">
+                    <div th:each="user : ${users}">
+                        <div id="users_left" class="users" th:if="${user.getDisplay()} &gt; 0 and ${user.getDisplay()} &lt; 3">
+                            <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
+                            <div th:if="${user.getId()}==2"><img src="https://imgur.com/80I5xRc.png"/></div>
+                            <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                            <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
+                            <div th:if="${user.getId()}==5"><img src=" https://imgur.com/ZB2H6GL.png"/></div>
+                            <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
+                            <tr>
+                                <td>Name: </td>
+                                <td th:text="${user.getFirstname()}">firstname</td>
+                                <td th:text="${user.getLastname()}">lastname</td>
+                                <br/>
+                                <td>e-mail: </td>
+                                <td th:text="${user.getMail()}">e-mail</td>
+                                <br/>
+                                <td>phone: </td>
+                                <td th:text="${user.getPhone()}">phone</td>
+                            </tr>
+                        </div>
+
+                        <div class="users" th:if="${user.getDisplay()} &gt; 2 and ${user.getDisplay()} &lt; 4">
+                            <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
+                            <div th:if="${user.getId()}==2"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                            <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
+                            <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
+                            <div th:if="${user.getId()}==5"><img src="https://imgur.com/80I5xRc.png"/></div>
+                            <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
+                            <tr>
+                                <td>Name: </td>
+                                <td th:text="${user.getFirstname()}">firstname</td>
+                                <td th:text="${user.getLastname()}">lastname</td>
+                                <br/>
+                                <td>e-mail: </td>
+                                <td th:text="${user.getMail()}">e-mail</td>
+                                <br/>
+                                <td>phone: </td>
+                                <td th:text="${user.getPhone()}">phone</td>
+                            </tr>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="users" th:if="${user.getDisplay()} &gt; 2 and ${user.getDisplay()} &lt; 4">
-                    <div th:if="${user.getId()}==1"><img src="https://imgur.com/YfYZVTs.png"/></div>
-                    <div th:if="${user.getId()}==2"><img src="https://imgur.com/2TkfJwE.png"/></div>
-                    <div th:if="${user.getId()}==3"><img src="https://imgur.com/2TkfJwE.png"/></div>
-                    <div th:if="${user.getId()}==4"><img src="https://imgur.com/4R2hBwE.png"/></div>
-                    <div th:if="${user.getId()}==5"><img src="https://imgur.com/80I5xRc.png"/></div>
-                    <div th:if="${user.getId()}>5"><img src="https://imgur.com/Xsg038j.png"/></div>
-                    <tr>
-                        <td>Name: </td>
-                        <td th:text="${user.getFirstname()}">firstname</td>
-                        <td th:text="${user.getLastname()}">lastname</td>
-                        <br/>
-                        <td>e-mail: </td>
-                        <td th:text="${user.getMail()}">e-mail</td>
-                        <br/>
-                        <td>phone: </td>
-                        <td th:text="${user.getPhone()}">phone</td>
-                    </tr>
-                </div>
-            </div>
-        </div>
+            </div> <!-- logged in -->
+            <div id="no_content" th:if="${user.username.equals('null')}">
+                <h3>YOU DO NOT HAVE PERMISSION TO VIEW THE CURRENT PAGE</h3>
+                <h3>PLEASE LOG IN TO ACCESS THE CONTENT</h3>
+            </div> <!-- Not logged in -->
+        </div> <!-- for each user -->
 
         <div style="clear:both;"></div>
     </div>

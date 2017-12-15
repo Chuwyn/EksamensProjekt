@@ -94,7 +94,7 @@ public class OrderRepository implements ICrud<Order>  {
             String fullname = (userList.get(order.getInt("user")-1).getFirstname()+" "+ userList.get(order.getInt("user")-1).getLastname());
             System.out.println("name "+fullname);
             display.add(new OrderDisplay(order.getInt("id"), fullname, customerList.get(order.getInt("customer")).getName(), modelList.get(order.getInt("model")).getName(), order.getDate("placement_date"), order.getDate("delivery_date"), statusList.get(order.getInt("status"))));
-            System.out.println("order test: "+order.getInt("id")+" "+fullname+" "+customerList.get(order.getInt("customer")).getName()+" "+modelList.get(order.getInt("model")).getName()+" "+ order.getDate("placement_date")+" "+order.getDate("delivery_date")+" "+statusList.get(order.getInt("status")));
+            System.out.println("order: "+order.getInt("id")+" "+fullname+" "+customerList.get(order.getInt("customer")).getName()+" "+modelList.get(order.getInt("model")).getName()+" "+ order.getDate("placement_date")+" "+order.getDate("delivery_date")+" "+statusList.get(order.getInt("status")));
             o++;
         }
 

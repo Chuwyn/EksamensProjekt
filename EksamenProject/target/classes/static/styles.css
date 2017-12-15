@@ -261,6 +261,19 @@ li {
     background-color: #A8C1DC;
 }
 
+#no_content{
+    float:left;
+    width: 70%;
+    margin-top: 20px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 50px;
+    height: 100%;
+    min-height: 300px;
+    max-height: 9000px;
+}
+
+
 /** Main styles end **/
 
 /** Order styles start**/
@@ -279,7 +292,6 @@ li {
     font: 14px Lato;
     box-shadow: 0 0 0 3px black inset;
 }
-
 
 /** Order styles end**/
 

@@ -48,27 +48,36 @@
 
 <!-- Div body, box for all content between header and footer -->
 <div id="body" >
-    <div id="order_search" class="orders">
-        <form th:action="@{/search}" method="get" th:object="${search}">
-            <p>Search by Order Number: </p><p><input type="text" th:field="*{id}" placeholder="Order ID"/></p><p><a href="/orders"><input type="button" value="Back to Orders" /></a></p>
-        </form>
-    </div>
-    <div th:if="${not #lists.isEmpty(searchResults)}" id="search_results">
-        <div th:each="order : ${searchResults}">
-            <div class="orders">
-                <tr>
-                    <p></p>
-                    <td><p>Order Number:</p><p th:text="${order.id}">my order</p><p>-</p></td>
-                    <td><p>User:</p><p th:text="${order.user}">my user</p><p>-</p></td>
-                    <td><p>Customer:</p><p th:text="${order.customer}">my customer</p><p>-</p></td>
-                    <td><p>Model:</p><p th:text="${order.modelname}">super model</p><p>-</p></td>
-                    <td><p>Placement date:</p><p th:text="${order.placementDate}"></p><p>-</p></td>
-                    <td><p>Delivery date:</p><p th:text="${order.deliveryDate}"></p><p>-</p></td>
-                    <td><p>Status:</p><p th:text="${order.status}"></p></td>
-                </tr>
+    <div th:each="user : ${users}">
+        <div th:unless="${user.username.equals('null')}">
+            <div id="order_search" class="orders">
+                <form th:action="@{/search}" method="get" th:object="${search}">
+                    <p>Search by Order Number: </p><p><input type="text" th:field="*{id}" placeholder="Order ID"/><p><input type="submit" value="Search" /></p></p><p><a href="/orders"><input type="button" value="Back to Orders" /></a></p>
+                </form>
             </div>
-        </div>
-    </div>
+            <div th:if="${not #lists.isEmpty(searchResults)}" id="search_results">
+                <div th:each="order : ${searchResults}">
+                    <div class="orders">
+                        <tr>
+                            <p></p>
+                            <td><p>Order Number:</p><p th:text="${order.id}">my order</p><p>-</p></td>
+                            <td><p>User:</p><p th:text="${order.user}">my user</p><p>-</p></td>
+                            <td><p>Customer:</p><p th:text="${order.customer}">my customer</p><p>-</p></td>
+                            <td><p>Model:</p><p th:text="${order.modelname}">super model</p><p>-</p></td>
+                            <td><p>Placement date:</p><p th:text="${order.placementDate}"></p><p>-</p></td>
+                            <td><p>Delivery date:</p><p th:text="${order.deliveryDate}"></p><p>-</p></td>
+                            <td><p>Status:</p><p th:text="${order.status}"></p></td>
+                        </tr>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- logged in -->
+        <div id="no_content" th:if="${user.username.equals('null')}">
+            <h3>YOU DO NOT HAVE PERMISSION TO VIEW THE CURRENT PAGE</h3>
+            <h3>PLEASE LOG IN TO ACCESS THE CONTENT</h3>
+        </div> <!-- Not logged in -->
+    </div> <!-- for each user -->
+
     <div style="clear:both;"></div>
 </div> <!-- div body ends here -->
 
