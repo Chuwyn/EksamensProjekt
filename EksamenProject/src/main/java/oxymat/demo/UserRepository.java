@@ -23,7 +23,7 @@ public class UserRepository implements ICrud<User> {
             if(display>3){
                display = 1;
             }
-            System.out.println("display: "+display);
+            System.out.println("Display number: "+display);
             display++;
         }
         if(display>3){

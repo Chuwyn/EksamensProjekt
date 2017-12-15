@@ -8,5 +8,4 @@ public interface ICrud<T> {
     ArrayList<T> readAll();
     void update(T t);
     void delete(int id);
-
 }

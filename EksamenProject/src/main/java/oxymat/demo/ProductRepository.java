@@ -49,7 +49,7 @@ public class ProductRepository implements ICrud<Product> {
             count += 1;
         }
         System.out.println(" ");
-        System.out.println("Display "+count+" products from database");
+        System.out.println("Display "+count+" products from database.");
         System.out.println(" ");
 
 

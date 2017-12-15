@@ -110,7 +110,6 @@ public class UController {
     }
 
 
-    /** start here **/
     @GetMapping("/products")
     public String products(Model model, User users) {
 
@@ -169,8 +168,5 @@ public class UController {
         model.addAttribute("ordersList", order);
         return "redirect:/orders";
     }
-
-
-    /** end here **/
 
 }

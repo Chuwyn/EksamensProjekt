@@ -44,7 +44,6 @@ public class OrderRepository implements ICrud<Order>  {
 
     public ArrayList<OrderDisplay> displayAll() {
         ArrayList<OrderDisplay> display = new ArrayList<OrderDisplay>();
-        ArrayList<Order> orderList = new ArrayList<Order>();
         ArrayList<User> userList = new ArrayList<>();
         ArrayList<Model> modelList = new ArrayList<>();
         ArrayList<Customer> customerList = new ArrayList<>();
