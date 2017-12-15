@@ -1,5 +1,9 @@
 package oxymat.demo;
 
+/**
+ * Customer class, same attributes as the customers table
+ * @Author ALS
+ */
 public class Customer {
     private int id;
     private String name;

@@ -3,7 +3,10 @@ package oxymat.demo;
 
 import java.sql.Date;
 
-
+/**
+ * The order class. Directly connected with the entities in the orders table.
+ * @Author ALS
+ */
 public class Order{
     private int id;
     private int userId;

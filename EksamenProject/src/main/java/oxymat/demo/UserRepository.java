@@ -7,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
+/**
+ * The user repository. Connected to the users table in the DB
+ * @Author ALS
+ * changed by: PTJ
+ */
 @Repository
 public class UserRepository implements ICrud<User> {
 

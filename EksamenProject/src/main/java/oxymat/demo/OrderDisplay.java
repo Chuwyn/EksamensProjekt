@@ -3,7 +3,10 @@ package oxymat.demo;
 
 import java.sql.Date;
 
-
+/**
+ * Order class with user and customer and modelname as strings instead of ints.
+ * @Author PTJ
+ */
 public class OrderDisplay {
     private int id;
     private String user;

@@ -1,5 +1,9 @@
 package oxymat.demo;
 
+/**
+ * A login class used to store the input username and password.
+ * @Author ALS
+ */
 public class Login {
     private String username;
     private String password;

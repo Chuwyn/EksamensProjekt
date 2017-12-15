@@ -1,6 +1,9 @@
 package oxymat.demo;
 
-
+/**
+ * User class, same attributes as the table users.
+ * @Author ALS
+ */
 public class User {
 
     private int id;

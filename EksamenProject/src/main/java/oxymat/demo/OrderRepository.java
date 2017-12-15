@@ -8,6 +8,12 @@ import org.springframework.stereotype.Repository;
 import oxymat.demo.*;
 import java.util.ArrayList;
 
+/**
+ * The order repository class, which handle the connection to the orders table in the database. All sql statements
+ * that has something to do with orders get handled here.
+ * @Author ALS
+ * Edited by: PTJ
+ */
 @Repository
 public class OrderRepository implements ICrud<Order>  {
 

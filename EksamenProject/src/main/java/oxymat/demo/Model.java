@@ -1,5 +1,9 @@
 package oxymat.demo;
 
+/**
+ * A model class. Same attributes as models table.
+ * @Author ALS
+ */
 public class Model {
     private int id;
     private String name;

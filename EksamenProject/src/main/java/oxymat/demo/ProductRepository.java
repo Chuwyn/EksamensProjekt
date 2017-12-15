@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
+/**
+ * The product repository. Connected to the table products in the db
+ * @Author PTJ
+ */
 @Repository
 public class ProductRepository implements ICrud<Product> {
 

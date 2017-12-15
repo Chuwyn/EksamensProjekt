@@ -1,5 +1,9 @@
 package oxymat.demo;
 
+/**
+ * Product class. Same attributes as models table.
+ * @Author PTJ
+ */
 public class Product {
     private int id;
     private String title;
