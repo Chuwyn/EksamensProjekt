@@ -129,9 +129,6 @@ public class UController {
         model.addAttribute("orders", orders.displayAll());
         model.addAttribute("search", new Order());
 
-        System.out.println(orders.displayAll().toString());
-
-
         return "orders";
     }
 
