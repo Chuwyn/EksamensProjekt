@@ -147,16 +147,31 @@ public class UController {
 
     @GetMapping("/search")
     public String searchOrdersById(@RequestParam (value= "id", required = true) String id, Model model, User users) {
+        if(checkIsStringNumber(id)){
+            searchResults.clear();
 
-        searchResults.clear();
+            searchResults.add(orders.findByOrderNumber(id));
 
-        searchResults.add(orders.findByOrderNumber(id));
+            users = activeUser;
+            model.addAttribute("users", users);
+            model.addAttribute("search", new Order());
+            model.addAttribute("searchResults", searchResults);
+        }
 
-        users = activeUser;
-        model.addAttribute("users", users);
-        model.addAttribute("search", new Order());
-        model.addAttribute("searchResults", searchResults);
         return "searchResult";
+    }
+
+    public boolean checkIsStringNumber(String id){
+        try{
+            int temp = Integer.parseInt(id);
+            if(temp > 0){
+                return true;
+            }
+            return false;
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

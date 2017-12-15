@@ -124,7 +124,20 @@ public class OrderRepository implements ICrud<Order>  {
         SqlRowSet user = jdbc.queryForRowSet("SELECT id,firstname,lastname FROM users");
         SqlRowSet customer = jdbc.queryForRowSet("SELECT name FROM customers");
 
-        SqlRowSet order = jdbc.queryForRowSet("SELECT * FROM orders WHERE id = '" + orderId + "'");
+
+        SqlRowSet allorder = jdbc.queryForRowSet("SELECT * FROM orders");
+
+        int n = 0;
+        int orderInt = Integer.parseInt(orderId);
+
+        while(allorder.next()) {
+            n++;
+        }
+        if(orderInt>n){
+            orderInt=n;
+        }
+
+        SqlRowSet order = jdbc.queryForRowSet("SELECT * FROM orders WHERE id = '" + orderInt + "'");
 
         int u = 0;
         int m = 0;
@@ -169,4 +182,7 @@ public class OrderRepository implements ICrud<Order>  {
 
         return null;
     }
+
+
+
 }
