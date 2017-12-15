@@ -1,24 +1,5 @@
-# EksamensProjekt
+# Obligatorisk opgave
 
-## Webapplication for Oxymat.
+## Obligatorisk opgave.
 
-*This project includes:*
-
-* Index.html
-	* Login session (WIP)
-* Products.html
-	* Listing all products /w info
-* Users.html
-	* Listing all users /w info
-* Ordes.html
-	* Listing 10 last orders (WIP)
-* styles.css
-	* One stylesheet containing all the styles for the entire project
-
-*Contains but unused:*
-
-* Create.html
-* Stock.html
-
-
-**Project by [Chuwyn](https://github.com/Chuwyn) and [Killfill](https://github.com/Killfill0o).**
+**Project by [Killfill](https://github.com/Killfill0o).**
