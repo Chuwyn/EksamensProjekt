@@ -1,5 +1,19 @@
-# Obligatorisk opgave
+## Webapplication for Oxymat.
+  
 
-## Obligatorisk opgave.
+*This project includes:*
+  
+  * Index.html
+  * Create.html
+  * Products.html
+  * Order.html
+  * Users.html
+  * searchResult.html
+  * styles.css
+  	* One stylesheet containing all the styles for the entire project
+  
 
-**Project by [Killfill](https://github.com/Killfill0o).**
+  
+  
+
+ **Project by [Chuwyn](https://github.com/Chuwyn) and [Killfill](https://github.com/Killfill0o).**
